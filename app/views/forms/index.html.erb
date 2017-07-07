@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Forms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Current_Status</th>
+      <th>Is placed</th>
+      <th>Comname</th>
+      <th>Comaddr</th>
+      <th>Desig</th>
+      <th>Exp</th>
+      <th>Abroad</th>
+      <th>Univ</th>
+      <th>Course</th>
+      <th>Starcompany</th>
+      <th>Staraddr</th>
+      <th>Commun</th>
+      <th>Mobile</th>
+      <th>Curmail</th>
+      <th>Linked</th>
+      <th>Areaofinterset</th>
+      <th>Contribute</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @forms.each do |form| %>
+      <tr>
+        <td><%= form.current %></td>
+        <td><%= form.is_placed %></td>
+        <td><%= form.comname %></td>
+        <td><%= form.comaddr %></td>
+        <td><%= form.desig %></td>
+        <td><%= form.exp %></td>
+        <td><%= form.abroad %></td>
+        <td><%= form.univ %></td>
+        <td><%= form.course %></td>
+        <td><%= form.starcompany %></td>
+        <td><%= form.staraddr %></td>
+        <td><%= form.commun %></td>
+        <td><%= form.mobile %></td>
+        <td><%= form.curmail %></td>
+        <td><%= form.linked_id %></td>
+        <td><%= form.areaofinterset %></td>
+        <td><%= form.contribute %></td>
+        <td><%= link_to 'Show', form %></td>
+        <td><%= link_to 'Edit', edit_form_path(form) %></td>
+        <td><%= link_to 'Destroy', form, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Form', new_form_path %>

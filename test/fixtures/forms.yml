@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  current: MyString
+  is_placed: false
+  comname: MyString
+  comaddr: MyString
+  desig: MyString
+  exp: 1
+  abroad: false
+  univ: MyString
+  course: MyString
+  starcompany: MyString
+  staraddr: MyString
+  commun: MyString
+  mobile: MyString
+  curmail: MyString
+  linked_id: MyString
+  areaofinterset: MyString
+  contribute: MyString
+
+two:
+  current: MyString
+  is_placed: false
+  comname: MyString
+  comaddr: MyString
+  desig: MyString
+  exp: 1
+  abroad: false
+  univ: MyString
+  course: MyString
+  starcompany: MyString
+  staraddr: MyString
+  commun: MyString
+  mobile: MyString
+  curmail: MyString
+  linked_id: MyString
+  areaofinterset: MyString
+  contribute: MyString

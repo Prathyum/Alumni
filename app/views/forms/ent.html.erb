@@ -1,0 +1,34 @@
+<div class="container">   <div class = "col-md-4"></div> 
+<%= form_with(model: form, local: true) do |f| %>
+  <% if form.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(form.errors.count, "error") %> prohibited this form from being saved:</h2>
+
+      <ul>
+      <% form.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="field">
+    <%= f.label :Company_Name %>
+    <%= f.text_field :starcompany,placeholder: "StartUp Name", class: "form-control"  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Company_Address %>
+    <%= f.text_field :staraddr,placeholder: "Startup Company Address", class: "form-control"  %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :area_of_interset %>
+    <%= f.text_field :areaofinterset,placeholder: "Area Of Interest", class: "form-control"  %>
+  </div>
+
+   <div class="field">
+    <%= f.label :Interested_in_hiring_from_college?%>
+    <%= f.text_field :contribute,placeholder: "Contribution", class: "form-control"  %>
+  </div>
+<% end %>

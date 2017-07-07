@@ -1,0 +1,103 @@
+<p id="notice"><%= notice %></p>
+<div clas="container">
+<h1>Confirm Your Details</h1>
+<div class="col-sm-3 col-md-6">
+<table class="table table-hover">
+<tbody>
+<tr>
+  <td><strong>Current_Status:</strong></td>
+ <td><%= @form.current %></td>
+</tr>
+<tr>
+  <td><strong>Campus Placed:</strong></td>
+<td> <%= @form.is_placed %></td>
+</tr>
+
+<tr>
+  <td><strong>Company name:</strong></td>
+  <td><%= @form.comname %></td>
+</tr>
+
+<tr>
+  <td><strong>Company_Address:</strong></td>
+  <td><%= @form.comaddr %></td>
+</tr>
+
+<tr>
+  <td><strong>Designation:</strong></td>
+  <td><%= @form.desig %></td>
+</tr>
+
+<tr>
+  <td><strong>Experience Gained:</strong></td>
+  <td><%= @form.exp %></td>
+</tr>
+
+<tr>
+  <td><strong>Abroad Studies:</strong></td>
+  <td><%= @form.abroad %></td>
+</tr>
+
+<tr>
+  <td><strong>University:</strong></td>
+  <td><%= @form.univ %></td>
+</tr>
+
+<tr>
+  <td><strong>Course:</strong></td>
+  <td><%= @form.course %></td>
+</tr>
+
+<tr>
+  <td><strong>Starup Company Name:</strong></td>
+  <td><%= @form.starcompany %></td>
+</tr>
+
+<tr>
+  <td><strong>Address:</strong></td>
+  <td><%= @form.staraddr %></td>
+</tr>
+
+<tr>
+  <td><strong>Most Preferable Communication:</strong></td>
+  <td><%= @form.commun %></td>
+</tr>
+
+<tr>
+  <td><strong>Mobile:</strong></td>
+  <td><%= @form.mobile %></td>
+</tr>
+
+<tr>
+  <td><strong>Current_mail:</strong></td>
+  <td><%= @form.curmail %></td>
+</tr>
+
+<tr>
+  <td><strong>Linked_in ID:</strong></td>
+  <td><%= @form.linked_id %></td>
+</tr>
+
+<tr>
+  <td><strong>Field Of Interset:</strong></td>
+  <td><%= @form.areaofinterset %></td>
+</tr>
+
+<tr>
+  <td><strong>Contribution to Collage:</strong></td>
+  <td><%= @form.contribute %></td>
+</p>
+</tr>
+</tbody>
+</table>
+</div>
+<%= link_to edit_form_path, class: "btn btn-default" do %>
+    <i class="glyphicon glyphicon-edit"></i> Edit
+<% end %>
+</br>
+<%= link_to staticpage_index_path, class: "btn btn-default" do %>
+    <i class="glyphicon glyphicon-ok"></i> Confirmed
+<% end %>
+</div>
+
+
