@@ -15,3 +15,6 @@
 //= require bootstrap-sprockets
 
 //= require_forms .
+
+//= require dependent-fields
+//= require underscore

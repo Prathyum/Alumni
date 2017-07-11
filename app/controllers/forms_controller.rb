@@ -1,17 +1,12 @@
 class FormsController < ApplicationController
-  before_action :set_form, only: [:edit, :update,:destroy]
+  before_action :set_form, only: [:show, :edit, :update,:destroy]
   before_action :authenticate_student!
 
   # GET /forms
   # GET /forms.json
   def index
     @forms = Form.all
-    if params[:ip].present?
-    @forms = Form.find_by_ip_address(params[:ip]);
-  else
-    @forms = Form.all
-  end
-  end
+      end
 
   # GET /forms/1
   # GET /forms/1.jsonx
@@ -22,6 +17,7 @@ class FormsController < ApplicationController
   # GET /forms/new
   def new
     @form=Form.new
+    @form=current_student.forms.build
   end
 
   # GET /forms/1/edit
@@ -31,12 +27,14 @@ class FormsController < ApplicationController
   # POST /forms
   # POST /forms.json
   def create
-        @form = Form.new(form_params)
+        @form = current_student.forms.build(form_params)
 
     respond_to do |format|
-      if @form.save
-        format.html { redirect_to @form, notice: 'AluminiForm was successfully created.' }
+      if @form.save(form_params)
+        
+        format.html{render :show, :edit }
         format.json { render :show, status: :created, location: @form }
+
       else
         format.html { render :new }
         format.json { render json: @form.errors, status: :unprocessable_entity }
@@ -76,6 +74,6 @@ class FormsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def form_params
-       params.require(:form).permit(:current, :is_placed, :comname, :comaddr, :desig, :exp, :abroad, :univ, :course, :starcompany, :staraddr, :commun, :mobile, :curmail, :linked_id, :areaofinterset, :contribute)
+       params.require(:form).permit(:current, :is_placed, :comname, :comaddr, :desig, :exp, :abroad, :univ, :course, :starcompany, :staraddr, :commun, :mobile, :curmail, :linked_id, :areaofinterset, :contribute, :govsector, :field)
     end
 end

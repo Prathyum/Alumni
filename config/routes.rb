@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'forms/new'
+  get '/2sign' => 'users#new'
+  get 'staticpage/index'
 
  resources :forms
-devise_for :students, :controllers => { :omniauth_callbacks => "callbacks" }
+ resources :users
+devise_for :students
 
 
   devise_scope :student do
