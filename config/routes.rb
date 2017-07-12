@@ -7,7 +7,11 @@ Rails.application.routes.draw do
  resources :forms
  resources :users
 devise_for :students
+  
 
+resources :student do
+  resources :form 
+end
 
   devise_scope :student do
   authenticated :student do
