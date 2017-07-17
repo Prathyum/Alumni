@@ -1,101 +1,52 @@
+<div class="container:style=> 'width: 20px'">
+  <%= simple_form_for @form do |f| %>
 
-<div class="container">   <div class = "col-md-4"></div> 
-<%= form_with(model: form, local: true) do |f| %>
-  <% if form.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(form.errors.count, "error") %> prohibited this form from being saved:</h2>
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
 
-      <ul>
-      <% form.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-<div class="form-group">
-<div class="col-md-3"></div>
-   <div class="col-md-6">
+    <%= f.input :current,priority: ["Working"], collection: ["Government official", "Higher Studies", "Entrepreneur", "Working", "Other Field"],input_html: { id: "select", style: 'width: 200px' } %>
 
-
-<div>
- <%= f.label :Current_Status %>
-
-<%= f.select :current, options_for_select([[' Working '],['Government official'],[' Higher Studies '],[ 'Entrepreneur'],['Other Field']]) , :id => "select" %>
-
-</div>
     <div class="common">
-    <%= f.label :Company_Name %>
-    <%= f.text_field :comname, placeholder: "Company name",class: "form-control"  %>
-    
-    <%= f.label :Company_Address %>
-    <%= f.text_field :comaddr,placeholder: "Company Address", class: "form-control" %>
-    
-    <%= f.label :Designation%>
-    <%= f.text_field :comdesig,placeholder: "Designation",class: "form-control" %>
-    
-    <%= f.label :mobile_number%>
-    <%= f.text_field :mobile,placeholder: "Mobile Number",class: "form-control" %>
-    
-    <%= f.label :Official_mail %>
-    <%= f.text_field :curmail,placeholder: "Official Mail",class: "form-control"  %>
-  
+      <%= f.input :comname, placeholder: "Company name"  %>
+
+      <%= f.input :comaddr,placeholder: "Company Address" %>
+
+      <%= f.input :desig,placeholder: "Designation" %>
+
+      <%= f.input :mobile,placeholder: "Mobile Number" %>
+
+      <%= f.input :curmail,placeholder: "Official Mail"  %>
 
     </div>
 
     <div class="working">
-    <%=f.label :Placed_on_Campus? %>
-    <%=f.check_box :is_placed %> 
+      <%=f.input :is_placed, as: :boolean, label: "Placed" %> 
     </div> 
-  
 
 
-   
-  <div class="higher">
-    <%= f.label :University_Name %>
-    <%= f.text_field :univ,placeholder: "University Name",class: "form-control"  %>
-    <%= f.label :University_Address %>
-    <%= f.text_field :univaddr,placeholder: "University Address",class: "form-control"  %>
-    <%= f.label :Course_Name %>
-    <%= f.text_field :course, placeholder: "Course Name",class: "form-control"  %>
+
+
+    <div class="higher">
+      <%= f.input :univ,placeholder: "University Name",class: "form-control"  %>
+      <%= f.input :univaddr,placeholder: "University Address",class: "form-control"  %>
+      <%= f.input :course, placeholder: "Course Name",class: "form-control"  %>
+    </div>
+
+    <div class="govt">
+      <%= f.input :govtsector, placeholder: "Government Sector",class: "form-control"  %>
+    </div>
+
+
+    <div class="entrepreneur">
+      <%= f.input :contribute,placeholder: "Contribution", class: "form-control"  %>
+    </div>
+
+    <div class="actions" align="center">
+      <br>
+      <%= f.button :submit, "Finish", class: "btn btn-success" %>
+    </div>
+
+    <% end %>
   </div>
-
-<div class="govt">
-    <%= f.label :Government_Sector %>
-    <%= f.text_field :govtsector, placeholder: "Government Sector",class: "form-control"  %>
-  </div>
-
-
- <!--  <div class="field1">
-    <%= f.label :LinkedIn_Handle %>
-    <%= f.text_field :linked_id,placeholder: "Linked_in Id", class: "form-control"  %>
-  </div> -->
-<%= f.label :Social_Links %>  
-<%= f.select :social, options_for_select([['LinkedIn'],['GitHub'],['Facebook'],['Other']])  %>
-
-
-  
- 
-   <div class="entrepreneur">
-    <%= f.label :Interested_in_hiring_from_college? %>
-    <%= f.text_field :contribute,placeholder: "Contribution", class: "form-control"  %>
-  </div>
-
-  <div class="actions" align="center">
-  <br>
-    <%= f.submit "Finish", class: "btn btn-success" %>
-  </div>
-  <!--%= link_to "Back", authenticated_root_path %-->
-  </div>
-<% end %>
 </div>
 </div>
-  
-  <script type="text/javascript">
-$(document).ready(function() {
-    $("#select").change(function(){
-        if($("#select").val() == "Working"){
-            $(".working").slideDown('slow');
-        }
-    });
-});
-</script>
