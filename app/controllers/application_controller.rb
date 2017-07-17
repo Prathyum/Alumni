@@ -16,7 +16,7 @@ protected
 
      def after_sign_up_path_for(student)
 
-     	new_form_path
+     	new_student_form_path
      end
 
      

@@ -29,7 +29,7 @@ class FormsController < ApplicationController
   def create
   
      @form = Form.new(form_params)
- @form.student_id= current_student.id
+      @form.student_id= current_student.id
     respond_to do |format|
       if @form.save(form_params)
         
