@@ -1,15 +1,16 @@
 class FormsController < ApplicationController
-  before_action :set_form, only: [:show, :edit, :update,:destroy]
+  before_action :set_form, only: [:index, :show, :edit, :update,:destroy]
   before_action :authenticate_student!
 
   # GET /forms
   # GET /forms.json
   def index
-    @forms = Form.all
-      end
-
+    @form = Form.all
+     
+    #     return
+ end
   # GET /forms/1
-  # GET /forms/1.jsonx
+  # GET /forms/1.jsonxc
   def show
 
   end
@@ -17,8 +18,7 @@ class FormsController < ApplicationController
   # GET /forms/new
   def new
     @form=Form.new
-    
-  end
+ end
 
   # GET /forms/1/edit
   def edit
@@ -27,13 +27,14 @@ class FormsController < ApplicationController
   # POST /forms
   # POST /forms.json
   def create
-        @form = current_student.forms.build(form_params)
-
+  
+     @form = Form.new(form_params)
+ @form.student_id= current_student.id
     respond_to do |format|
       if @form.save(form_params)
         
-        format.html{render :show, :edit }
-        format.json { render :show, status: :created, location: @form }
+        format.html{redirect_to @form, notice: ''}                                                                                
+         format.json { render :show, status: :created, location: @form }
 
       else
         format.html { render :new }

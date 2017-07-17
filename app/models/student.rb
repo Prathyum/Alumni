@@ -3,7 +3,8 @@ class Student < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-    has_one :form
+         has_many :forms
+    
     #validates_presence_of :regno    
       # validates :regno, uniqueness: true;
 

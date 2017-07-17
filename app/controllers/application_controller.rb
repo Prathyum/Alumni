@@ -9,10 +9,16 @@ protected
      devise_parameter_sanitizer.permit(:account_update)  {|u| u.permit(:email,:password,:password_configuration,:remember_me)}
     end
 
-    def after_sign_in_path_for(student)
+     def after_sign_in_path_for(student)
 
-    	staticpage_index_path
-    end
+     	staticpage_index_path
+     end
 
+     def after_sign_up_path_for(student)
+
+     	new_form_path
+     end
+
+     
 
 end

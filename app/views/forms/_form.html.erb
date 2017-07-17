@@ -16,90 +16,67 @@
 <div class="col-md-3"></div>
    <div class="col-md-6">
 
-  
-<script type="text/javascript">
-  
-    $(document).ready(function() {
-    DependentFields.bind()
- });        
 
-
-
-
-</script>
-
-
-
-  <div class="field">
-
+<div>
  <%= f.label :Current_Status %>
 
-<%= f.select :current, options_for_select([[' Working '],['Government official'],[' Higher Studies '],[ 'Entrepreneur'],[' Other Field ']])  %>
+<%= f.select :current, options_for_select([[' Working '],['Government official'],[' Higher Studies '],[ 'Entrepreneur'],['Other Field']]) , :id => "select" %>
 
-<!-- <div class="js-dependent-fields"  data-select-id="form_current" data-option-value='Working'>
-    <div>  -->
-    <div class="field">
-  <%= f.label :Company_Name %>
-  <%= f.text_field :comname, placeholder: "Company name",class: "form-control"  %> </div>
-    </div>
-  
-<!-- 
-<div class= "field">
-    </div> -->
-
-   <div class="field" id="1">
+</div>
+    <div class="common">
+    <%= f.label :Company_Name %>
+    <%= f.text_field :comname, placeholder: "Company name",class: "form-control"  %>
+    
     <%= f.label :Company_Address %>
     <%= f.text_field :comaddr,placeholder: "Company Address", class: "form-control" %>
-  </div>
-
-<div class="field" id="1">
+    
     <%= f.label :Designation%>
     <%= f.text_field :comdesig,placeholder: "Designation",class: "form-control" %>
-  </div>
-  <!--div class="field">     <%= f.label :Mode_of_communication%> 
-  <%=f.select :commun ,options_for_select([[' Mobile'],['Email'],["Twiiter"]]) %></div-->
-
-  <div class="field" id="4">
+    
     <%= f.label :mobile_number%>
     <%= f.text_field :mobile,placeholder: "Mobile Number",class: "form-control" %>
-  </div>
-  <div class="field">
-    <%= f.label :PG_university %>
-    <%= f.text_field :univ,placeholder: "PG Univ name - Enter 'nil' if not applicable",class: "form-control"  %>
-  </div>
-
-  <div class="field">
-    <%= f.label :PG_course%>
-    <%= f.text_field :course, placeholder: "PG Course name-Enter 'nil' if not applicable",class: "form-control"  %>
-  </div>
-
-  <div class="field" id="5">
+    
     <%= f.label :Official_mail %>
     <%= f.text_field :curmail,placeholder: "Official Mail",class: "form-control"  %>
+  
+
+    </div>
+
+    <div class="working">
+    <%=f.label :Placed_on_Campus? %>
+    <%=f.check_box :is_placed %> 
+    </div> 
+  
+
+
+   
+  <div class="higher">
+    <%= f.label :University_Name %>
+    <%= f.text_field :univ,placeholder: "University Name",class: "form-control"  %>
+    <%= f.label :University_Address %>
+    <%= f.text_field :univaddr,placeholder: "University Address",class: "form-control"  %>
+    <%= f.label :Course_Name %>
+    <%= f.text_field :course, placeholder: "Course Name",class: "form-control"  %>
   </div>
 
-  <div class="field" id="6">
+<div class="govt">
+    <%= f.label :Government_Sector %>
+    <%= f.text_field :govtsector, placeholder: "Government Sector",class: "form-control"  %>
+  </div>
+
+
+ <!--  <div class="field1">
     <%= f.label :LinkedIn_Handle %>
     <%= f.text_field :linked_id,placeholder: "Linked_in Id", class: "form-control"  %>
-  </div>
-  <!--div class="field" id="7">
-    <%= f.label :Company_Name %>
-    <%= f.text_field :starcompany,placeholder: "StartUp Name", class: "form-control"  %>
-  </div-->
-
-  <!--div class="field" id="8">
-    <%= f.label :Company_Address %>
-    <%= f.text_field :staraddr,placeholder: "Startup Company Address", class: "form-control"  %>
-  </div-->
+  </div> -->
+<%= f.label :Social_Links %>  
+<%= f.select :social, options_for_select([['LinkedIn'],['GitHub'],['Facebook'],['Other']])  %>
 
 
-  <div class="field" id="9">
-    <%= f.label :area_of_interset %>
-    <%= f.text_field :areaofinterset,placeholder: "Area Of Interest", class: "form-control"  %>
-  </div>
-
-   <div class="field" id="10">
-    <%= f.label :Interested_in_hiring_from_college?%>
+  
+ 
+   <div class="entrepreneur">
+    <%= f.label :Interested_in_hiring_from_college? %>
     <%= f.text_field :contribute,placeholder: "Contribution", class: "form-control"  %>
   </div>
 
@@ -113,3 +90,12 @@
 </div>
 </div>
   
+  <script type="text/javascript">
+$(document).ready(function() {
+    $("#select").change(function(){
+        if($("#select").val() == "Working"){
+            $(".working").slideDown('slow');
+        }
+    });
+});
+</script>
