@@ -3,8 +3,16 @@
 
   <div class="col-md-3"></div>
   <div class="col-md-6">
+  <h2> Hello <%= current_student.email %> </h2>
+ <h2>Fill out the form </h2>
+  <div class ="Field">
+ <%= f.input :mobile,placeholder: " Current Mobile Number" %>
 
-    <%= f.input :current,priority: ["Working"], collection: ["Government official", "Higher Studies", "Entrepreneur", "Working", "Other Field"],input_html: { id: "select", style: 'width: 200px' } %>
+      <%= f.input :curmail,placeholder: "Official Mail"  %>
+      <%= f.input :address,placeholder: "current Address"  %>
+      </div>
+
+    <%= f.input :current,priority: ["Working"], collection: ["Government official", "Higher Studies", "Entrepreneur", "Working", "Other Field"],input_html: { id: "select", style: 'width: 300px' } %>
 
     <div class="common">
       <%= f.input :comname, placeholder: "Company name"  %>
@@ -13,14 +21,12 @@
 
       <%= f.input :desig,placeholder: "Designation" %>
 
-      <%= f.input :mobile,placeholder: "Mobile Number" %>
-
-      <%= f.input :curmail,placeholder: "Official Mail"  %>
+     
 
     </div>
 
     <div class="working">
-      <%=f.input :is_placed, as: :boolean, label: "Placed" %> 
+      <%=f.input :is_placed, as: :boolean, label: "Placed on Campus" %> 
     </div> 
 
 
@@ -34,12 +40,15 @@
 
     <div class="govt">
       <%= f.input :govtsector, placeholder: "Government Sector",class: "form-control"  %>
+      <%= f.input :desig,placeholder: "Designation" %>
+      <%= f.input :comaddr,placeholder: "Address" %>
     </div>
 
 
     <div class="entrepreneur">
       <%= f.input :contribute,placeholder: "Contribution", class: "form-control"  %>
     </div>
+    
 
     <div class="actions" align="center">
       <br>
