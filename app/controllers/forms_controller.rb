@@ -22,6 +22,8 @@ class FormsController < ApplicationController
 
   # GET /forms/1/edit
   def edit
+     @form = Form.find(params[:id])
+    # @student=Student.find(params[:id])
   end
 
   # POST /forms

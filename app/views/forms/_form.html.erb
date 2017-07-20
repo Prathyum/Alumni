@@ -3,14 +3,16 @@
 
   <div class="col-md-3"></div>
   <div class="col-md-6">
-  <h2> Hello <%= current_student.email %> </h2>
+  <h2 align="center"> Hello <%= current_student.email %> </h2>
  <h2>Fill out the form </h2>
   <div class ="Field">
- <%= f.input :mobile,placeholder: " Current Mobile Number" %>
-
+      <%= f.input :mobile,placeholder: " Current Mobile Number" %> 
       <%= f.input :curmail,placeholder: "Official Mail"  %>
       <%= f.input :address,placeholder: "current Address"  %>
-      </div>
+      <%= f.input :linked_id,placeholder: "LinkedIn Handle"  %>
+      
+  </div>
+
 
     <%= f.input :current,priority: ["Working"], collection: ["Government official", "Higher Studies", "Entrepreneur", "Working", "Other Field"],input_html: { id: "select", style: 'width: 300px' } %>
 

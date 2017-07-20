@@ -1,4 +1,6 @@
-class UsersController < ApplicationController	
+class UsersController < ApplicationController
+  # validates_presence_of :rollno, presence: true
+
 def new
     @user=User.new
   end

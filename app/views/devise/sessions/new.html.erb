@@ -29,13 +29,12 @@
   <div class="actions table-responsive">
   <table class="table">
   <th>
-  <td><%= f.submit "Log in",class: "btn btn-success"%> 
-</td>
+  <td><center><%= f.submit "Log in",class: "btn btn-success"%></center></td>
     <td><%= render "devise/shared/links" %></td>
     </th>
     <th>
       <!--td><%= f.submit "Sign Up", class: "btn btn-success" %></td-->
-      <td><%= link_to "Sign up", new_user_path(resource_name),class: "btn btn-success" %> </td>
+      <td><%= link_to "Sign up", new_user_path(resource_name),class: "btn btn-success" %></td>
     </th>
     </table>
   </div>

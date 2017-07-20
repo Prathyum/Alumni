@@ -4,10 +4,12 @@ $(document).ready(function() {
         {
             $(".common").slideDown();
        
-        $(".working").slideDown();
+            $(".working").slideDown();
             $(".higher").slideUp();
         	$(".govt").slideUp();
         	$(".entrepreneur").slideUp();
+            // $('#select')[0].reset();
+
 
         }
         else if($("#select").val() === "Entrepreneur")
@@ -19,6 +21,7 @@ $(document).ready(function() {
         	$(".govt").slideUp();
         	        $(".entrepreneur").slideDown();
         	        $(".working").slideUp();
+//                    $('#select')[0].reset();
 
 
         }
@@ -30,12 +33,14 @@ $(document).ready(function() {
         	$(".entrepreneur").slideUp();
         	$(".working").slideUp();
         	$(".common").slideUp();
+  //          $('#select').reset();
 
         }
         else if($("#select").val() === "Higher Studies") {
         	$(".higher").slideDown();
         	$(".govt").slideUp();
         	$(".common").slideUp();
+    //        $('#select')[0].reset();
         }
  else if($("#select").val() === "Other Field")
  {
@@ -43,6 +48,7 @@ $(document).ready(function() {
             $(".higher").slideUp();
         	$(".govt").slideUp();
         	$(".working").slideUp();
+      //      $('.working').empty();
  }
         else
         {
@@ -52,6 +58,7 @@ $(document).ready(function() {
         	$(".entrepreneur").slideUp();
         	$(".working").slideUp();
         	$(".common").slideUp();
+        //    $('#select').reset();
         }
         
     });

@@ -6,15 +6,17 @@
 
 <div class="col-md-3"></div>
    <div class="col-md-6">
+   <div class="field" align="left">
+    <%= f.label :Rollno %>
+    <%= f.text_field :rollno,placeholder: "Rollno", class: "form-control" %>
+  </div>
+   
 <div class="field" align="left">
     <%= f.label :Data_Of_Birth %>
     <%= f.date_field :dob,placeholder: "yyyy/mm/dd",class: "form-control" %>
-  </div>
-<div class="field" align="left">
-    <%= f.label :Rollno %>
-    <%= f.text_field :rollno,placeholder: "Rollno", class: "form-control" %>
   </div><br>
-    <%= f.submit "Sign Up now", class: "btn btn-success" %>
+   <center><%= f.submit "Continue ->", class: "btn btn-success" %></center>
+
 
 
 <%end%>
