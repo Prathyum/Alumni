@@ -4,6 +4,15 @@
 <div class="col-sm-3 col-md-6">
 <table class="table table-hover">
 <tbody>
+<tr>
+  <td><strong>Mobile:</strong></td>
+  <td><%= @form.mobile %></td>
+</tr>
+
+<tr>
+  <td><strong>Current mail:</strong></td>
+  <td><%= @form.curmail %></td>
+</tr>
 
 <tr>
   <td><strong>Current Status:</strong></td>
@@ -14,10 +23,24 @@
   <td><strong>Campus Placed:</strong></td>
 <td> <%= @form.is_placed %></td>
 </tr>
+<tr>
+  <td><strong>Field Of Work:</strong></td>
+  <td><%= @form.fieldofwork %></td>
+</tr>
 
 <tr>
   <td><strong>Company name:</strong></td>
   <td><%= @form.comname %></td>
+</tr>
+
+<tr>
+  <td><strong>Designation:</strong></td>
+  <td><%= @form.desig %></td>
+</tr>
+
+<tr>
+  <td><strong>Year Of Experience:</strong></td>
+  <td><%= @form.expyear %></td>
 </tr>
 <tr>
   <td><strong>Company_Mailid:</strong></td>
@@ -29,10 +52,6 @@
   <td><%= @form.comaddr %></td>
 </tr>
 
-<tr>
-  <td><strong>Designation:</strong></td>
-  <td><%= @form.desig %></td>
-</tr>
 
 <% elsif @form.current== 'Higher Studies'%>
 <tr>
@@ -45,18 +64,80 @@
   <td><%= @form.course %></td>
 </tr>
 
+<tr>
+  <td><strong>Course Duration:</strong></td>
+  <td><%= @form.courseduration %></td>
+</tr>
+<tr>
+  <td><strong>University Address:</strong></td>
+  <td><%= @form.univaddr%></td>
+</tr>
+
 <% elsif @form.current== 'Entrepreneur'%>
 <tr>
-  <td><strong>Companyname:</strong></td>
+  <td><strong>Field:</strong></td>
+  <td><%= @form.Field %></td>
+</tr>
+<tr>
+  <td><strong>Company Name:</strong></td>
   <td><%= @form.entcompany %></td>
 </tr>
 <tr>
-  <td><strong>Designation:</strong></td>
+<td><strong>Designation:</strong></td>
   <td><%= @form.entdesignation %></td>
 </tr>  
+<tr>
+  <td><strong>No of Employees:</strong></td>
+  <td><%= @form.noofemployees%></td>
+</tr>
+<tr>
+<td><strong>Annual Turnover:</strong></td>
+  <td><%= @form.annualturnover%></td>
+</tr>
+<tr>
+<td><strong>Website Link:</strong></td>
+  <td><%= @form.website%></td>
+</tr>  
+
+<tr>
+<td><strong>Contribution:</strong></td>
+  <td><%= @form.contribute%></td>
+</tr>
+
+<% elsif @form.current== 'Government'%>
+<tr>
+  <td><strong>Government Type:</strong></td>
+  <td><%= @form.govtsector %></td>
+</tr>
+<tr>
+  <td><strong>Designation:</strong></td>
+  <td><%= @form.govtdesig %></td>
+</tr>
+<tr>
+  <td><strong>Address:</strong></td>
+  <td><%= @form.govtadd %></td>
+</tr>
+
+<tr>
+  <td><strong>Phone_number:</strong></td>
+  <td><%= @form.govtphone %></td>
+</tr>
+
+<% elsif @form.current== 'Other Field'%>
+<tr>
+  <td><strong>Field:</strong></td>
+  <td><%= @form.otherfield %></td>
+</tr>
+<tr>
+  <td><strong>Work Place</strong></td>
+  <td><%= @form.othercompany %></td>
+</tr>
+
+<tr>
+  <td><strong>Address</strong></td>
+  <td><%= @form.otheraddress%></td>
+</tr>
 <%end%>
-
-
 <!-- <tr>
   <td><strong>Experience Gained:</strong></td>
   <td><%= @form.exp %></td>
@@ -83,15 +164,6 @@
   <td><%= @form.commun %></td>
 </tr>
  -->
-<tr>
-  <td><strong>Mobile:</strong></td>
-  <td><%= @form.mobile %></td>
-</tr>
-
-<tr>
-  <td><strong>Current mail:</strong></td>
-  <td><%= @form.curmail %></td>
-</tr>
 
  
 <!-- <tr>
@@ -114,8 +186,4 @@
     <i class="glyphicon glyphicon-ok"></i> Confirmed
 <% end %>
 </div>
-
 </div>
-<
-
-ker
