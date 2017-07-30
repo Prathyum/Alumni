@@ -1,18 +1,21 @@
 <%= form_for (@user) do|f| %>
 
-<h1 align="center"> Sign Up </h1>
+
 
 <div class="container">
 
-<div class="col-md-3"></div>
-   <div class="col-md-6">
+<div class="col-md-4"></div>
+   <div class="col-md-3">
+
+<h1 align="center"> Sign Up </h1>
+<br>
    <div class="field" align="left">
-    <%= f.label :Rollno %>
+   <center> <%= f.label :Rollno %></center>
     <%= f.text_field :rollno,placeholder: "Rollno", class: "form-control" %>
   </div>
    
 <div class="field" align="left">
-    <%= f.label :Data_Of_Birth %>
+    <center><%= f.label :Data_Of_Birth %></center>
     <%= f.date_field :dob,placeholder: "yyyy/mm/dd",class: "form-control" %>
   </div><br>
    <center><%= f.submit "Continue ->", class: "btn btn-success" %></center>

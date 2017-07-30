@@ -14,12 +14,10 @@ $(document).ready(function() {
         }
         else if($("#select").val() === "Entrepreneur")
         {
-            $(".common").slideDown();
-       
-        $(".common").slideDown();
+            
+       $(".entrepreneur").slideDown();
             $(".higher").slideUp();
         	$(".govt").slideUp();
-        	        $(".entrepreneur").slideDown();
         	        $(".working").slideUp();
 //                    $('#select')[0].reset();
 

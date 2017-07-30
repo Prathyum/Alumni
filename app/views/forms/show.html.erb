@@ -9,6 +9,7 @@
   <td><strong>Current Status:</strong></td>
  <td><%= @form.current %></td>
 </tr>
+<%if @form.current == 'Working'%>
 <tr>
   <td><strong>Campus Placed:</strong></td>
 <td> <%= @form.is_placed %></td>
@@ -17,6 +18,10 @@
 <tr>
   <td><strong>Company name:</strong></td>
   <td><%= @form.comname %></td>
+</tr>
+<tr>
+  <td><strong>Company_Mailid:</strong></td>
+  <td><%= @form.workmail %></td>
 </tr>
 
 <tr>
@@ -29,6 +34,28 @@
   <td><%= @form.desig %></td>
 </tr>
 
+<% elsif @form.current== 'Higher Studies'%>
+<tr>
+  <td><strong>University Name:</strong></td>
+  <td><%= @form.univ %></td>
+</tr>
+
+<tr>
+  <td><strong>Course Name:</strong></td>
+  <td><%= @form.course %></td>
+</tr>
+
+<% elsif @form.current== 'Entrepreneur'%>
+<tr>
+  <td><strong>Companyname:</strong></td>
+  <td><%= @form.entcompany %></td>
+</tr>
+<tr>
+  <td><strong>Designation:</strong></td>
+  <td><%= @form.entdesignation %></td>
+</tr>  
+<%end%>
+
 
 <!-- <tr>
   <td><strong>Experience Gained:</strong></td>
@@ -40,15 +67,6 @@
   <td><%= @form.abroad %></td>
 </tr> -->
 
-<tr>
-  <td><strong>University Name:</strong></td>
-  <td><%= @form.univ %></td>
-</tr>
-
-<tr>
-  <td><strong>Course Name:</strong></td>
-  <td><%= @form.course %></td>
-</tr>
 
 <!-- <tr>
   <td><strong>Starup Company Name:</strong></td>
@@ -75,10 +93,6 @@
   <td><%= @form.curmail %></td>
 </tr>
 
-<tr>
-  <td><strong>LinkedIn ID:</strong></td>
-  <td><%= @form.linked_id %></td>
-</tr>
  
 <!-- <tr>
   <td><strong>Field Of Interset:</strong></td>
