@@ -70,7 +70,7 @@
 </tr>
 <tr>
   <td><strong>University Address:</strong></td>
-  <td><%= @form.univaddr%></td>
+  <td><%= @form.univaddr %></td>
 </tr>
 
 <% elsif @form.current== 'Entrepreneur'%>
@@ -104,7 +104,7 @@
   <td><%= @form.contribute%></td>
 </tr>
 
-<% elsif @form.current== 'Government'%>
+<% elsif @form.current== 'Government official'%>
 <tr>
   <td><strong>Government Type:</strong></td>
   <td><%= @form.govtsector %></td>
@@ -136,6 +136,11 @@
 <tr>
   <td><strong>Address</strong></td>
   <td><%= @form.otheraddress%></td>
+</tr>
+
+<tr>
+  <td><strong>Designation</strong></td>
+  <td><%= @form.otherdesignation%></td>
 </tr>
 <%end%>
 <!-- <tr>
