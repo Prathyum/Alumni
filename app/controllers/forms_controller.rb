@@ -77,6 +77,6 @@ class FormsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def form_params
-       params.require(:form).permit(:current, :is_placed,:address, :fieldofwork,:comname,:country_code,:comaddr, :desig, :exp, :abroad, :univ, :course, :starcompany, :staraddr, :commun, :mobile, :curmail, :linked_id, :areaofinterset, :contribute,:entdesignation,:entcompany,:workmail, :workfield, :govtsector,:otherfield,:othercompany, :Field,:otherdesignation, :courseducation,:website,:govtdesig,:govtadd,:govtphone,:noofemployees,:annualturnover,:expyear,:otheraddress, :univaddr, :courseduration, :street_address, :city, :state, :country, :zip)
+       params.require(:form).permit(:current, :is_placed,:address, :fieldofwork,:comname,:country_code,:comaddr, :desig, :exp, :abroad, :univ, :course, :starcompany, :staraddr, :commun, :mobile, :curmail, :linked_id, :areaofinterset, :contribute,:entdesignation,:entcompany,:workmail, :workfield, :govtsector,:otherfield,:othercompany, :Field,:otherdesignation, :courseducation,:website,:govtdesig,:govtadd,:govtphone,:noofemployees,:annualturnover,:expyear,:otheraddress, :univaddr, :courseduration, :entcity,:entstate,:entstreet,:entapt,:entzip,:univapt,:univcity,:univstreet,:univstate,:univzip,:workapt,:workstreet,:workcity,:workstate,:workzip,:govtapt,:govtstate,:govtstreet,:govtZip,:govtcity)
     end
 end
