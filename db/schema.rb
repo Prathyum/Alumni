@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170801083107) do
+ActiveRecord::Schema.define(version: 20170801091559) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -94,6 +94,12 @@ ActiveRecord::Schema.define(version: 20170801083107) do
     t.string "otherzip"
     t.string "otherapt"
     t.string "othercity"
+    t.string "conutry"
+    t.string "workcountry"
+    t.string "govtcountry"
+    t.string "entcountry"
+    t.string "highercountry"
+    t.string "othercountry"
   end
 
   create_table "students", force: :cascade do |t|
