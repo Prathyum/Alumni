@@ -8,9 +8,9 @@
   <div class ="Field">
       <%= f.input :mobile,placeholder: " Current Mobile Number" ,label: "Mobile number"%> 
       <%= f.input :curmail,placeholder: "Official Mail" ,label: " Offical Email Id " %>
-      <!--%= f.input :address,placeholder: "current Address" ,label: " Address" %-->
+      <%= f.input :address,placeholder: "current Address" ,label: " Address" %>
       
-      <h4><strong>Address Details:</strong></h4>
+      <!-- <h4><strong>Address Details:</strong></h4>
       <div class="two-col">
       <div class="col1">
       <%= f.input :suite_apt,placeholder: "Apt Name/Door No" ,label: "Apt details" %>
@@ -31,7 +31,7 @@
 
       
       <%= f.input :zip,placeholder: "Zip Code" ,label: "Zip Code" %>
-      
+       -->
       
       
       
@@ -91,7 +91,7 @@
 
       
       <%= f.input :noofemployees,placeholder: "No Of Employees",label: "Employees in Company"%>
-      <%= f.input :annualturnover,priority: ["Above 10Lakhs "], collection: ["10-20 lakhs","20-30lakhs","30-40 lakhs","above 40 lakhs"],input_html: { id: "select", style: 'width: 300px' },label: "Annual turn over" %>
+      <%= f.input :annualturnover,priority: ["Above 10Lakhs "], collection: ["Below 10 lakhs", "10-20 lakhs","20-30lakhs","30-40 lakhs","above 40 lakhs"],input_html: { id: "select", style: 'width: 300px' },label: "Annual turn over" %>
       <%= f.input :website,placeholder: "Website link",label: "Website"%>
       <!--%= f.input :contribute,placeholder: "Contribution to college", label: "Contribution " %-->
     </div>
