@@ -1,9 +1,11 @@
+
+
 <div class="container:style=> 'width: 20px'">
   <%= simple_form_for @form do |f| %>
-
+<h2 align="left"> Hello <%= current_student.email %> </h2>
   <div class="col-md-4"></div>
   <div class="col-md-3">
-  <h2 align="center"> Hello <%= current_student.email %> </h2>
+  
  <h2>Fill out the form </h2>
   <div class ="Field">
       <%= f.input :mobile,placeholder: " Current Mobile Number" ,label: "Mobile number"%> 
