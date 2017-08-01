@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "httpgem 'devise'://github.com/#{repo_name}.git"
 end
 
-gem 'neighborhood', '~> 0.1.0'
+#gem 'neighborhood', '~> 0.1.0'
 gem 'awesome_print'
 gem 'underscore-rails'
 gem 'dependent-fields-rails'
