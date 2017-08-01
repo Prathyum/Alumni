@@ -77,6 +77,6 @@ class FormsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def form_params
-       params.require(:form).permit(:current, :is_placed,:address, :fieldofwork,:comname,:country_code,:comaddr, :desig, :exp, :abroad, :univ, :course, :starcompany, :staraddr, :commun, :mobile, :curmail, :linked_id, :areaofinterset, :contribute,:entdesignation,:entcompany,:workmail, :workfield, :govsector,:otherfield,:othercompany, :Field,:otherdesignation, :courseducation,:website,:govtdesig,:govtadd,:govtphone,:noofemployees,:annualturnover,:expyear,:otheraddress, :univaddr, :courseduration)
+       params.require(:form).permit(:current, :is_placed,:address, :fieldofwork,:comname,:country_code,:comaddr, :desig, :exp, :abroad, :univ, :course, :starcompany, :staraddr, :commun, :mobile, :curmail, :linked_id, :areaofinterset, :contribute,:entdesignation,:entcompany,:workmail, :workfield, :govsector,:otherfield,:othercompany, :Field,:otherdesignation, :courseducation,:website,:govtdesig,:govtadd,:govtphone,:noofemployees,:annualturnover,:expyear,:otheraddress, :univaddr, :courseduration, :street_address, :city, :state, :country, :zip)
     end
 end
