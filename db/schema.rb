@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170730190152) do
+ActiveRecord::Schema.define(version: 20170731090103) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,17 @@ ActiveRecord::Schema.define(version: 20170730190152) do
     t.string "govtdesig"
     t.string "govtadd"
     t.string "govtphone"
+    
+    t.string "street_address"
+    t.string "suite_apt"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
+    t.string "country"
+    t.string "phone"
+    t.decimal "lat"
+    t.decimal "lng"
+    t.text "full_address"
   end
 
   create_table "students", force: :cascade do |t|

@@ -58,6 +58,10 @@
   <td><strong>University Name:</strong></td>
   <td><%= @form.univ %></td>
 </tr>
+<tr>
+  <td><strong>University Address:</strong></td>
+  <td><%= @form.univaddr %></td>
+</tr>
 
 <tr>
   <td><strong>Course Name:</strong></td>
@@ -68,11 +72,6 @@
   <td><strong>Course Duration:</strong></td>
   <td><%= @form.courseduration %></td>
 </tr>
-<tr>
-  <td><strong>University Address:</strong></td>
-  <td><%= @form.univaddr %></td>
-</tr>
-
 <% elsif @form.current== 'Entrepreneur'%>
 <tr>
   <td><strong>Field:</strong></td>
