@@ -18,6 +18,7 @@
   <td><strong>Current Status:</strong></td>
  <td><%= @form.current %></td>
 </tr>
+
 <%if @form.current == 'Working'%>
 <tr>
   <td><strong>Campus Placed:</strong></td>
@@ -81,11 +82,29 @@
   <td><strong>University Name:</strong></td>
   <td><%= @form.univ %></td>
 </tr>
-<tr>
-  <td><strong>University Address:</strong></td>
-  <td><%= @form.univaddr %></td>
+ <td><strong>Apt Name/Door no:</strong></td>
+  <td><%= @form.univapt %></td>
 </tr>
-
+<tr>
+  <td><strong>Street:</strong></td>
+  <td><%= @form.univstreet %></td>
+</tr>
+<tr>
+  <td><strong>City:</strong></td>
+  <td><%= @form.univcity %></td>
+</tr>
+<tr>
+  <td><strong>State:</strong></td>
+  <td><%= @form.univstate %></td>
+</tr>
+<tr>
+  <td><strong>Country:</strong></td>
+  <td><%= @form.univcountry %></td>
+</tr>
+<tr>
+  <td><strong>City:</strong></td>
+  <td><%= @form.univzip %></td>
+</tr>
 <tr>
   <td><strong>Course Name:</strong></td>
   <td><%= @form.course %></td>
@@ -119,7 +138,32 @@
 <tr>
 <td><strong>Website Link:</strong></td>
   <td><%= @form.website%></td>
-</tr>  
+</tr>
+<tr>
+  <td><strong>Apt Name/Door no:</strong></td>
+  <td><%= @form.entapt %></td>
+</tr>
+<tr>
+  <td><strong>Street:</strong></td>
+  <td><%= @form.entstreet %></td>
+</tr>
+<tr>
+  <td><strong>City:</strong></td>
+  <td><%= @form.entcity %></td>
+</tr>
+<tr>
+  <td><strong>State:</strong></td>
+  <td><%= @form.entstate %></td>
+</tr>
+<tr>
+  <td><strong>Country:</strong></td>
+  <td><%= @form.entcountry %></td>
+</tr>
+<tr>
+  <td><strong>City:</strong></td>
+  <td><%= @form.entzip %></td>
+</tr>
+
 <!-- 
 <tr>
 <td><strong>Contribution:</strong></td>
@@ -135,13 +179,31 @@
   <td><strong>Designation:</strong></td>
   <td><%= @form.govtdesig %></td>
 </tr>
+ <td><strong>Apt Name/Door no:</strong></td>
+  <td><%= @form.govtapt %></td>
+</tr>
 <tr>
-  <td><strong>Address:</strong></td>
-  <td><%= @form.govtadd %></td>
+  <td><strong>Street:</strong></td>
+  <td><%= @form.govtstreet %></td>
+</tr>
+<tr>
+  <td><strong>City:</strong></td>
+  <td><%= @form.govtcity %></td>
+</tr>
+<tr>
+  <td><strong>State:</strong></td>
+  <td><%= @form.govtstate %></td>
+</tr>
+<tr>
+  <td><strong>Country:</strong></td>
+  <td><%= @form.govtcountry %></td>
+</tr>
+<tr>
+  <td><strong>City:</strong></td>
+  <td><%= @form.govtzip %></td>
 </tr>
 
-<tr>
-  <td><strong>Phone_number:</strong></td>
+</tr><strong>Phone_number:</strong></td>
   <td><%= @form.govtphone %></td>
 </tr>
 
@@ -156,13 +218,31 @@
 </tr>
 
 <tr>
-  <td><strong>Address</strong></td>
-  <td><%= @form.otheraddress%></td>
-</tr>
-
-<tr>
   <td><strong>Designation</strong></td>
   <td><%= @form.otherdesignation%></td>
+</tr>
+ <td><strong>Apt Name/Door no:</strong></td>
+  <td><%= @form.otherapt %></td>
+</tr>
+<tr>
+  <td><strong>Street:</strong></td>
+  <td><%= @form.otherstreet %></td>
+</tr>
+<tr>
+  <td><strong>City:</strong></td>
+  <td><%= @form.othercity %></td>
+</tr>
+<tr>
+  <td><strong>State:</strong></td>
+  <td><%= @form.otherstate %></td>
+</tr>
+<tr>
+  <td><strong>Country:</strong></td>
+  <td><%= @form.othercountry %></td>
+</tr>
+<tr>
+  <td><strong>City:</strong></td>
+  <td><%= @form.otherzip %></td>
 </tr>
 <%end%>
 <!-- <tr>
