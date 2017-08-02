@@ -69,7 +69,6 @@ ActiveRecord::Schema.define(version: 20170802033637) do
     t.decimal "lat"
     t.decimal "lng"
     t.text "full_address"
-    
     t.string "workapt"
     t.string "workstreet"
     t.string "workcity"
@@ -80,13 +79,11 @@ ActiveRecord::Schema.define(version: 20170802033637) do
     t.string "entstreet"
     t.string "entapt"
     t.string "entzip"
-
     t.string "univapt"
     t.string "univcity"
     t.string "univstreet"
     t.string "univstate"
     t.string "univzip"
-    
     t.string "govtapt"
     t.string "govtstate"
     t.string "govtstreet"
