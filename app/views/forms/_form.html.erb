@@ -1,27 +1,44 @@
+
+
 <div class="container:style=> 'width: 20px'">
   <%= simple_form_for @form do |f| %>
-
-  <div class="col-md-4"></div>
-  <div class="col-md-4">
-  <h2 align="center"> Hello <%= current_student.email %> </h2>
- <h4>Fill out the form </h4>
+<h2 align="left"> Hello <%= current_student.email %> </h2>
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+ <h2>Fill out the form </h2>
   <div class ="Field">
       <%= f.input :mobile,placeholder: " Current Mobile Number" ,label: "Mobile number"%> 
       <%= f.input :curmail,placeholder: "Official Mail" ,label: " Offical Email Id " %>
-      <!--%= f.input :address,placeholder: "current Address" ,label: " Address" %-->
+      
+    <h4><strong> Current Address Details:</strong></h4>
+      <div class="two-col">
+      <div class="col1">
+      <%= f.input :apt,placeholder: "Apt Name/Door No" ,label: "Apt details" %>
+      </div>
+      <div class="col2">
+      <%= f.input :street,placeholder: "Street Name" ,label: "Street Address" %>
+      </div>
+      </div>
+      <div class="two-col">
+      <div class="col1">
+      <%= f.input :State,placeholder: "State" ,label: "State" %>
+      </div>
+      <div class="col2">
+      <%= f.input :City,placeholder: "City" ,label: "City" %>
+      </div>
+      </div>
 
-      
-      
-      
-      
-      
-
-      <%= f.input :linked_id,placeholder: "LinkedIn Handle" ,label: " Linked_in Handle " %>
-      
+      <div class="two-col">
+      <div class="col1">
+       <%= f.input :Zip,placeholder: "Zip Code" ,label: "Zip Code" %>
+     </div>
+     <div class="col2">
+  <%= f.input :othercountry, placeholder: "Country" ,label: "Country" %>
   </div>
+  </div>
+ <%= f.input :linked_id,placeholder: "LinkedIn Handle" ,label: " Linked_in Handle " %>
 
-
-    <%= f.input :current,priority: ["Working"], collection: ["Government official", "Higher Studies", "Entrepreneur", "Working", "Other Field"],input_html: { id: "select", style: 'width: 300px' } %>
+    <%= f.input :current,priority: [""], collection: ["Government official", "Higher Studies", "Entrepreneur", "Working", "Other Field"],placeholder:"Current status",label:"Current Status",input_html: { id: "select", style: 'width: 300px' } %>
 
 
     <div class="working">
@@ -33,7 +50,32 @@
       <%= f.input :comname, placeholder: "Company name",label: "Company Name"  %>
 <%= f.input :expyear,priority: ["1"], collection: ["1","2","3","4","5","6","7","8","9","+10"],input_html: { id: "select", style: 'width: 300px' },label: "Year of Experience" %>
       <%= f.input :comaddr,placeholder: "Company Address",label: "Work place " %>
-
+      <h4><strong>Address Details:</strong></h4>
+      <div class="two-col">
+      <div class="col1">
+      <%= f.input :workapt,placeholder: "Apt Name/Door No" ,label: "Apt details" %>
+      </div>
+      <div class="col2">
+      <%= f.input :workstreet,placeholder: "Street Name" ,label: "Street Address" %>
+      </div>
+      </div>
+      <div class="two-col">
+      <div class="col1">
+      <%= f.input :workstate,placeholder: "State" ,label: "State" %>
+      </div>
+      <div class="col2">
+      <%= f.input :workcity,placeholder: "City" ,label: "City" %>
+      </div>
+      </div>
+<div class="two-col">
+      <div class="col1">
+      
+      <%= f.input :workzip,placeholder: "Zip Code" ,label: "Zip Code" %>
+      </div>
+      <div class="col2">
+      <%= f.input :workcountry, placeholder: "Country" ,label: "Country" %>
+      </div>
+      </div>
       <%= f.input :desig,placeholder: "Designation",label: " Designation" %>
       <%= f.input :workmail,placeholder: "Company_Mail_Id",label: "Company Id"  %>
       <%=f.input :is_placed, as: :boolean, label: "Placed on Campus" %> 
@@ -44,23 +86,75 @@
 
     <div class="higher">
       <%= f.input :univ,placeholder: "University Name",label:"University"  %>
+      <%= f.input :major, placeholder: "Major",label:"Major"  %>
+      <%= f.input :course,priority: ["ME"], collection: ["ME","MBA","Ph.D","M.Tech","MBA","MS"],input_html: { id: "select", style: 'width: 300px' } %>
+      <h4><strong>Address Details:</strong></h4>
+      <div class="two-col">
+      <div class="col1">
+      <%= f.input :univapt,placeholder: "Apt Name/Door No" ,label: "Apt details" %>
+      </div>
+      <div class="col2">
+      <%= f.input :univstreet,placeholder: "Street Name" ,label: "Street Address" %>
+      </div>
+      </div>
+      <div class="two-col">
+      <div class="col1">
+      <%= f.input :univstate,placeholder: "State" ,label: "State" %>
+      </div>
+      <div class="col2">
+      <%= f.input :univcity,placeholder: "City" ,label: "City" %>
+      </div>
+      </div>
+      <div class="two-col">
+      <div class="col1">
+      
+      <%= f.input :univzip,placeholder: "Zip Code" ,label: "Zip Code" %>
+      </div>
+      <div class="col2">
+      <%= f.input :highercountry, placeholder: "Country" ,label: "Country" %>
+</div>
+</div>
       <%= f.input :courseduration,priority: ["1"], collection: ["1","2","3+"],input_html: { id: "select", style: 'width: 300px' },label: "Duration of the course" %>
-      <%= f.input :univaddr,placeholder: "University Address",label:"University Address"  %>
-      <%= f.input :course, placeholder: "Course Name",label:"Course Name"  %>
+      
     </div>
 
     <div class="govt">
       <%= f.input :govtsector,priority: ["State Government"], collection: ["State Government","Central Government","Other"],input_html: { id: "select", style: 'width: 300px' } %>
       <%= f.input :govtdesig,placeholder: "Designation",label: "Govt designation" %>
       <%= f.input :govtadd,placeholder: "Address",label: "Address"%>
-      <%= f.input :govtphone,placeholder: "Phone Number",label: "Phone number of office"%>
-    
+      <h4><strong>Address Details:</strong></h4>
+      <div class="two-col">
+      <div class="col1">
+      <%= f.input :govtapt,placeholder: "Apt Name/Door No" ,label: "Apt details" %>
+      </div>
+      <div class="col2">
+      <%= f.input :govtstreet,placeholder: "Street Name" ,label: "Street Address" %>
+      </div>
+      </div>
+      
+      <div class="two-col">
+      <div class="col1">
+      <%= f.input :govtstate,placeholder: "State" ,label: "State" %>
+      </div>
+      <div class="col2">
+      <%= f.input :govtcity,placeholder: "City" ,label: "City" %>
+      </div>
+      </div>
+
+      <div class="two-col">
+      <div class="col1">
+      <%= f.input :govtZip,placeholder: "Zip Code" ,label: "Zip Code" %>
+       </div>
+       <div class="col2">
+       <%= f.input :govtcountry,placeholder: "Country" ,label: "Country" %>
+       </div>
+       </div>
+    <%= f.input :govtphone,placeholder: "Phone Number",label: "Phone number of office"%>
     </div>
 
 
     <div class="entrepreneur">
-  
-      <%= f.input :Field,priority: ["Working"], collection: [" Aerospace Engineer ","Agricultural Engineer ",
+  <%= f.input :Field,priority: ["Working"], collection: [" Aerospace Engineer ","Agricultural Engineer ",
         " Application Engineer "," Automotive Engineer "," Biological Engineer "," Biomedical Engineer "," Boiler Engineer "," Ceramics Engineer "," Chemical Engineer "," Chief Engineer "," Civil Engineer "," Commissioning Engineer "," Compliance Engineer "," Component Engineer "," Computer Hardware Engineer "," Computer Software Engineer "," Construction Engineer "," Contract Engineer "," Controls Engineer "," Cost Engineer "," Design Engineer "," Director of Engineering "," Drafting Technician "," Drilling Engineer "," Electrical Design Engineer "," Electrical Engineer "," Electrical Field Engineer "," Electro-Mechanical Engineer "," Electronics Engineer (non-computer) "," Engineering Aide "," Engineering Clerk "," Engineering Executive "," Engineering Manager "," Engineering Secretary "," Engineering Technician "," Entry Level Engineer "," Environmental Engineer "," Environmental Compliance Engineer "," Environmental Health Safety Engineer "," Equipment Engineer "," E/M Engineer "," Facilities Engineer "," Field Service Engineer "," Fire Protection Engineer "," Firmware Engineer "," Frontend Engineer "," Geological Engineer "," Hardware Engineer "," Health and Safety Engineer "," High-Pressure Engineer ", " Industrial Engineer "," Instrumentation Engineer "," I&C Engineer "," Junior Engineer "," Lead Engineer "," Licensing Engineer "," Logistics Engineer ",
   " Maintenance Engineer "," Manager of Engineering "," Manufacturing Engineer "," Marine Engineer "," Materials Engineer "," Mechanical Design Engineer "," Mechanical Engineer "," Metallurgical Engineer "," Mining Engineer "," Mining Safety Engineer "," Naval Architect "," Nuclear Engineer "," Operations Engineer "," Packaging Engineer "," Performance Engineer "," Petroleum Engineer "," Pipeline Engineer "," Piping Engineer "," Piping Stress Engineer "," Planning Engineer "," Plant Engineer "," Plastics Engineer "," Power Engineer "," Process Control Engineer "," Process Design Engineer "," Process Engineer "," Product Design/Development Engineer "," Product Engineer "," Production Engineer "," Project Controls Engineer "," Project Engineer "," Project Assistant "," Proposal Engineering Coordinator "," Protection Engineer "," Quality Assurance Engineer "," Quality Control Engineer "," Quality Engineer "," Relay Engineer "," Reliability Engineer "," Research Engineer "," Research and Development Engineer "," Reservoir Engineer "," RF Engineer "," Rotating Equipment Engineer "," R&D Engineer "," Safety Engineer "," Sales Engineer "," SCADA Engineer "," Security Engineer "," Senior Electrical Engineer "," Senior Manufacturing Engineer "," Senior Mechanical Engineer "," Senior Process Engineer "," Software Engineer "," Staff Engineer "," Staking Engineer "," Stationary Engineer "," Structural Engineer "," Substation Engineer "," Systems Engineer", "Technical Support Engineer "," Telecommunications Engineer "," Test Engineer "," Transmission Engineer "," Transmission Planning Engineer ",
     " Turbine Engineer "," User Interface (UI) Engineer "," Validation Engineer "," Vice President of Engineering "," Welding Engineering "
@@ -70,11 +164,36 @@
       <%= f.input :entdesignation,placeholder: "Designation",label: "Designation "%>
 
       
+      <h4><strong>Address Details:</strong></h4>
+      <div class="two-col">
+      <div class="col1">
+      <%= f.input :entapt,placeholder: "Apt Name/Door No" ,label: "Apt details" %>
+      </div>
+      <div class="col2">
+      <%= f.input :entstreet,placeholder: "Street Name" ,label: "Street Address" %>
+      </div>
+      </div>
+
+      <div class="two-col">
+      <div class="col1">
+      <%= f.input :entstate,placeholder: "State" ,label: "State" %>
+      </div>
+      <div class="col2">
+      <%= f.input :entcity,placeholder: "City" ,label: "City" %>
+      </div>
+      </div>
+      <div class="two-col">
+      <div class="col1">
+      <%= f.input :entzip,placeholder: "Zip Code" ,label: "Zip Code" %>
+      </div>
+      <div class="col2">
+      <%= f.input :entcountry, placeholder: "Country" ,label: "Country" %>
+      </div>
+      </div>
       <%= f.input :noofemployees,placeholder: "No Of Employees",label: "Employees in Company"%>
       <%= f.input :annualturnover,priority: ["Above 10Lakhs "], collection: ["10-20 lakhs","20-30lakhs","30-40 lakhs","above 40 lakhs"],input_html: { id: "select", style: 'width: 300px' },label: "Annual turn over" %>
       <%= f.input :website,placeholder: "Website link",label: "Website"%>
-      <!--%= f.input :contribute,placeholder: "Contribution to college", label: "Contribution " %-->
-    </div>
+      </div>
 
 
     <div class="others">
@@ -82,8 +201,34 @@
     " Wedding Planner "],input_html: { id: "select", style: 'width: 300px' },label: "Field of Work" %>
       <%= f.input :othercompany,placeholder: "Work Place", label: "Company Name"%>
       <%= f.input :otherdesignation,placeholder: "Designation", label: "Designation"%>
-      <%= f.input :otheraddress,placeholder: " Address", label: "Address"%>
-    </div>
+      <h4><strong>Address Details:</strong></h4>
+      <div class="two-col">
+      <div class="col1">
+      <%= f.input :suite_apt,placeholder: "Apt Name/Door No" ,label: "Apt details" %>
+      </div>
+      <div class="col2">
+      <%= f.input :street_address,placeholder: "Street Name" ,label: "Street Address" %>
+      </div>
+      </div>
+      
+      <div class="two-col">
+      <div class="col1">
+      <%= f.input :state,placeholder: "State" ,label: "State" %>
+      </div>
+      <div class="col2">
+      <%= f.input :city,placeholder: "City" ,label: "City" %>
+      </div>
+      </div>
+      <div class="two-col">
+      <div class="col1"> 
+      <%= f.input :zip,placeholder: "Zip Code" ,label: "Zip Code" %>
+      </div>
+      <div class="col2">
+      <%= f.input :othercountry, placeholder: "Country" ,label: "Country" %>
+      </div>
+      </div>
+
+      </div>
 
     <div class="actions" align="center">
       <br>
