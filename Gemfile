@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 #gem 'neighborhood', '~> 0.1.0'
+gem 'httparty'
 gem 'awesome_print'
 gem 'underscore-rails'
 gem 'dependent-fields-rails'

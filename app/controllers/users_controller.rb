@@ -5,6 +5,13 @@ def new
     @user=User.new
   end
 
+  def edit
+       @user = User.find(params[:id])
+
+
+  end
+
+
  def create
   @user = User.new(user_params)
   if @user.save
@@ -13,6 +20,8 @@ def new
 else
 	redirect_to '/'  
 end
+#@user.student_id= current_student.id
+
  end
 
 def index
