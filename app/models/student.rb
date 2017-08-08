@@ -4,7 +4,7 @@ class Student < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
          has_many :forms
-         has_many :question
+         has_many :questions
     
     #validates_presence_of :regno    
       # validates :regno, uniqueness: true;
