@@ -10,7 +10,7 @@
       <%= f.input :mobile,placeholder: " Current Mobile Number" ,label: "Mobile number"%> 
       <%= f.input :curmail,placeholder: "Official Mail" ,label: " Offical Email Id " %>
       
-    <h4><strong> Current Address Details:</strong></h4>
+    <h4><strong> Current Address Details:</strong></Fh4>
       <div class="two-col">
       <div class="col1">
       <%= f.input :apt,placeholder: "Apt Name/Door No" ,label: "Apt details" %>
@@ -86,9 +86,15 @@
 
     <div class="higher">
       <%= f.input :univ,placeholder: "University Name",label:"University"  %>
+<<<<<<< HEAD
+      <%= f.input :course,priority: ["ME"], collection: ["ME","MBA","Ph.D","M.Tech","MBA","MS"],input_html: { id: "select", style: 'width: 300px' } %>
+      <%= f.input :major, placeholder: "Major",label:"Major"  %>
+      
+=======
       
       <%= f.input :course,priority: ["ME"], collection: ["ME","MBA","Ph.D","M.Tech","MBA","MS"],input_html: { id: "select", style: 'width: 300px' } %>
       <%= f.input :major, placeholder: "Major",label:"Major"  %>
+>>>>>>> 2ae00543d694b8a54205ccd375f7e31e1f9c728f
       <h4><strong>Address Details:</strong></h4>
       <div class="two-col">
       <div class="col1">
