@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170802033637) do
+ActiveRecord::Schema.define(version: 20170804033200) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,7 +69,6 @@ ActiveRecord::Schema.define(version: 20170802033637) do
     t.decimal "lat"
     t.decimal "lng"
     t.text "full_address"
-    
     t.string "workapt"
     t.string "workstreet"
     t.string "workcity"
@@ -80,13 +79,11 @@ ActiveRecord::Schema.define(version: 20170802033637) do
     t.string "entstreet"
     t.string "entapt"
     t.string "entzip"
-
     t.string "univapt"
     t.string "univcity"
     t.string "univstreet"
     t.string "univstate"
     t.string "univzip"
-    
     t.string "govtapt"
     t.string "govtstate"
     t.string "govtstreet"
@@ -110,6 +107,15 @@ ActiveRecord::Schema.define(version: 20170802033637) do
     t.string "Zip"
     t.string "Country"
     t.string "major"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "tile"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "studentid"
+    t.integer "student_id"
   end
 
   create_table "students", force: :cascade do |t|
