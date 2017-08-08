@@ -15,13 +15,12 @@ def new
  def create
   @user = User.new(user_params)
   if @user.save
+
    # session[:user_id]=user.user_id
    redirect_to '/students/sign_up'
 else
 	redirect_to '/'  
 end
-#@user.student_id= current_student.id
-
  end
 
 def index

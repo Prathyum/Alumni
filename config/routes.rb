@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'forms/new'
-  get 'forms/edit'
   get '/2sign' => 'users#new'
   get 'staticpage/index'
 
