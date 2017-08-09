@@ -30,6 +30,7 @@ class CommentsController < ApplicationController
    @comment = Comment.new(comment_params)
     @comment.student_id= current_student.id
     @comment.question_id= @question.id
+    @comment.cemail = current_student.email
     
 
     # @comment.student_id= current_student.id

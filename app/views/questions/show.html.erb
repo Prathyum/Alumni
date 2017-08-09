@@ -8,7 +8,13 @@
 <p>
   <strong>Body:</strong>
   <%= @question.body %>
-</p><%= link_to "New_review",new_question_comment_path(@question),class: "btn btn-danger"%>
+  <br>
+  <strong>Submitted by <%= current_student.email %></strong>
+</p>
+<p> Comments <%= @question.comments.count %> 
+<%= link_to "Show comments", question_comments_path(@question) %>
+</p>
+<%= link_to "Write a comment",new_question_comment_path(@question),class: "btn btn-default"%>
 
 <%= link_to 'Edit', edit_question_path(@question) %> |
 <%= link_to 'Back', questions_path %>

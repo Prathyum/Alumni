@@ -25,6 +25,7 @@ before_action :authenticate_student!
   # POST /questions.json
   def create
     @question = current_student.question.build(question_params)
+    @question.qemail = current_student.email
     respond_to do |format|
       if @question.save
         format.html { redirect_to @question, notice: 'Question was successfully created.' }
