@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :questions
+ 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'forms/new'
   get 'forms/edit'
@@ -25,6 +25,11 @@ end
   end
 end
 
+   
+
+  resources :questions do
+   resources :comments
+ end
   
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

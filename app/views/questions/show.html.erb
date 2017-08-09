@@ -8,7 +8,7 @@
 <p>
   <strong>Body:</strong>
   <%= @question.body %>
-</p>
+</p><%= link_to "New_review",new_question_comment_path(@question),class: "btn btn-danger"%>
 
 <%= link_to 'Edit', edit_question_path(@question) %> |
 <%= link_to 'Back', questions_path %>

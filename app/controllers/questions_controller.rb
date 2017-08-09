@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
-before_filter :authenticate_student!
+before_action :authenticate_student!
   # GET /questions
   # GET /questions.json
   def index
@@ -14,7 +14,7 @@ before_filter :authenticate_student!
 
   # GET /questions/new
   def new
-    @question=Question.new
+    @question = current_student.question.build
   end
 
   # GET /questions/1/edit
@@ -24,8 +24,7 @@ before_filter :authenticate_student!
   # POST /questions
   # POST /questions.json
   def create
-    @question = Question.new(question_params)
-@question.student_id= current_student.id
+    @question = current_student.question.build(question_params)
     respond_to do |format|
       if @question.save
         format.html { redirect_to @question, notice: 'Question was successfully created.' }
