@@ -11,8 +11,7 @@
     <%= f.label :email  %><br />
     <%= f.email_field :email,placeholder: "Email Id",class: "form-control",autofocus: true %>
   </div>
-
-  <div class="field">
+<div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
