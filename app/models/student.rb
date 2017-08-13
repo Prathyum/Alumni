@@ -4,8 +4,14 @@ class Student < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
          has_many :forms
+<<<<<<< HEAD
          has_many :questions
              # has_many :comments
+=======
+
+         has_many :question
+         has_many :comments
+>>>>>>> 0210e3d837651b4c4aef17e1704d1946a29e2ff3
     
     #validates_presence_of :regno    
       # validates :regno, uniqueness: true;

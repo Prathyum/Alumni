@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 
+<<<<<<< HEAD
 <div class="col-sm-1"></div>
 
 <% @questions.each do |question| %>
@@ -26,6 +27,27 @@
             <% end %>
         </div>
     
+=======
+<table>
+  <thead>
+    <tr>
+      <th>Tile</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr>
+        <td><%= link_to question.tile, question %> --- </td>
+        <!-- <td><%= question.body %></td> -->
+        <!-- <td><%= link_to 'Show', question %></td>
+        <td><%= link_to 'Edit', edit_question_path(question) %></td>
+        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        -->
+           <td>  Created  <%= time_ago_in_words(question.created_at) %> ago</td> 
+    
+      </tr>
+>>>>>>> 0210e3d837651b4c4aef17e1704d1946a29e2ff3
     <% end %>
   </h2>
             </div>

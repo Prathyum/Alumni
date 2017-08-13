@@ -27,10 +27,18 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
+<<<<<<< HEAD
     @question = Question.find(params[:question_id])
     @comment = @question.comments.new(comment_params)
     @comment.student_id = current_student.id if current_student
  
+=======
+   @comment = Comment.new(comment_params)
+    @comment.student_id= current_student.id
+    @comment.question_id= @question.id
+    @comment.cemail = current_student.email
+    
+>>>>>>> 0210e3d837651b4c4aef17e1704d1946a29e2ff3
 
     # @comment.student_id= current_student.id
     # @comment.question_id= @question.id

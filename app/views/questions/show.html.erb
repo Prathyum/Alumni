@@ -21,12 +21,23 @@
 
 <p>
   <strong>Body:</strong>
+<<<<<<< HEAD
   <%= @question.body %> -->
 
 
  <%= link_to "New_comment",new_question_comment_path(@question),class: "btn btn-danger"%>
 <%= link_to 'Back', questions_path,class: "btn btn-primary "%>
 
+=======
+  <%= @question.body %>
+  <br>
+  <strong>Submitted by <%= current_student.email %></strong>
+</p>
+<p> Comments <%= @question.comments.count %> 
+<%= link_to "Show comments", question_comments_path(@question) %>
+</p>
+<%= link_to "Write a comment",new_question_comment_path(@question),class: "btn btn-default"%>
+>>>>>>> 0210e3d837651b4c4aef17e1704d1946a29e2ff3
 
  
 <h3 class="comments_title">
