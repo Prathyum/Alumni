@@ -28,6 +28,10 @@ end
    
 
   resources :questions do
+    member do
+      put "like", to:    "questions#upvote"
+      put "dislike", to: "questions#downvote"
+    end
    resources :comments
  end
   

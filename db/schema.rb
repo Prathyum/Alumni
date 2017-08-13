@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170808151910) do
+ActiveRecord::Schema.define(version: 20170810175046) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20170808151910) do
     t.datetime "updated_at", null: false
     t.integer "student_id"
     t.integer "question_id"
+    t.index ["question_id"], name: "index_comments_on_question_id"
+    t.index ["student_id"], name: "index_comments_on_student_id"
   end
 
   create_table "forms", force: :cascade do |t|
@@ -94,7 +96,6 @@ ActiveRecord::Schema.define(version: 20170808151910) do
     t.string "otherzip"
     t.string "otherapt"
     t.string "othercity"
-    t.string "conutry"
     t.string "workcountry"
     t.string "govtcountry"
     t.string "entcountry"
@@ -114,8 +115,8 @@ ActiveRecord::Schema.define(version: 20170808151910) do
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "studentid"
     t.integer "student_id"
+    t.index ["student_id"], name: "index_questions_on_student_id"
   end
 
   create_table "students", force: :cascade do |t|
@@ -144,6 +145,22 @@ ActiveRecord::Schema.define(version: 20170808151910) do
     t.string "rollno"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.string "votable_type"
+    t.bigint "votable_id"
+    t.string "voter_type"
+    t.bigint "voter_id"
+    t.boolean "vote_flag"
+    t.string "vote_scope"
+    t.integer "vote_weight"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope"
+    t.index ["votable_type", "votable_id"], name: "index_votes_on_votable_type_and_votable_id"
+    t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
+    t.index ["voter_type", "voter_id"], name: "index_votes_on_voter_type_and_voter_id"
   end
 
 end

@@ -1,0 +1,14 @@
+<%= div_for(comment) do %>
+	<div class="comments_wrapper clearfix">
+		<div class="pull-left">
+			<p class="lead"><%= comment.body.html_safe %></p>
+			<p><small>Submitted <strong><%= time_ago_in_words(comment.created_at) %> ago</strong> by <%= comment.student.email %></small></p>
+		</div>
+
+		<div class="btn-group pull-right">
+			<% if comment.student == current_student -%>
+			 <!-- <td><%= link_to 'Destroy',@comment, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+         <% end %>
+		</div>
+	</div>
+<% end %>

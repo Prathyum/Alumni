@@ -1,30 +1,63 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Questions</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Tile</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="col-sm-1"></div>
 
-  <tbody>
-    <% @questions.each do |question| %>
-      <tr>
-        <td><%= question.tile %></td>
-        <td><%= question.body %></td>
-        <td><%= link_to 'Show', question %></td>
-        <td><%= link_to 'Edit', edit_question_path(question) %></td>
-        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= time_ago_in_words(question.created_at) %></td>
-      </tr>
+<% @questions.each do |question| %>
+<div class="container">
+<div class="page-header">
+    <h2>
+        <%= link_to question.tile, question %><br>
+        <small class="author">Submitted
+            <%= time_ago_in_words(question.created_at) %>
+            by
+            </div>
+  <div class="btn-group">
+        <!-- <a class="btn btn-default btn-sm" href="<% questions_path %>">Visit question</a> -->
+        <%= link_to like_question_path(question), method: :put, class: "btn btn-default btn-sm" do %>
+        <span class="glyphicon glyphicon-chevron-up"></span>
+        Upvote
+        <%= question.get_upvotes.size %>
+        <% end %>
+        <%= link_to dislike_question_path(question), method: :put, class: "btn btn-default btn-sm" do %>
+        <span class="glyphicon glyphicon-chevron-down">
+            Downvote
+            <%= question.get_downvotes.size %>
+            <% end %>
+        </div>
+    
     <% end %>
-  </tbody>
-</table>
-
+  </h2>
+            </div>
+            <br>
+<div class="container">
+ <div class="col-sm-1"></div> 
+<div class="col-md-5">
+<div id="box">
+<%= simple_form_for [@question, Question.new]  do |f| %>
+  <div class="form-inputs">
+  <h1>Short Description</h1>
+    <%= f.input :tile %>
+    <h1>Ask Question</h1>
+    <%= f.input :body, as: :wysihtml5 %>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit,value="Ask Question" %>
+  </div>
+  </div>
+<% end %>
+</div>
+</div>
 <br>
-
+<style>
+#box{
+    background-color: lightgrey;
+    width: 700px;
+    border: 5px solid lightblue;
+    padding: 10px;
+    margin: 1px;
+}
+</style>
+<!-- 
 <%= link_to 'New Question', new_question_path %>
+ -->
