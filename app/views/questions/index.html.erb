@@ -1,7 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-
-<<<<<<< HEAD
 <div class="col-sm-1"></div>
 
 <% @questions.each do |question| %>
@@ -10,8 +8,8 @@
     <h2>
         <%= link_to question.tile, question %><br>
         <small class="author">Submitted
-            <%= time_ago_in_words(question.created_at) %>
-            by
+            by<%=question.student.email%>
+            
             </div>
   <div class="btn-group">
         <!-- <a class="btn btn-default btn-sm" href="<% questions_path %>">Visit question</a> -->
@@ -27,27 +25,6 @@
             <% end %>
         </div>
     
-=======
-<table>
-  <thead>
-    <tr>
-      <th>Tile</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @questions.each do |question| %>
-      <tr>
-        <td><%= link_to question.tile, question %> --- </td>
-        <!-- <td><%= question.body %></td> -->
-        <!-- <td><%= link_to 'Show', question %></td>
-        <td><%= link_to 'Edit', edit_question_path(question) %></td>
-        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        -->
-           <td>  Created  <%= time_ago_in_words(question.created_at) %> ago</td> 
-    
-      </tr>
->>>>>>> 0210e3d837651b4c4aef17e1704d1946a29e2ff3
     <% end %>
   </h2>
             </div>
@@ -59,9 +36,9 @@
 <%= simple_form_for [@question, Question.new]  do |f| %>
   <div class="form-inputs">
   <h1>Short Description</h1>
-    <%= f.input :tile %>
+    <%= f.input :tile ,label:" short Description "%>
     <h1>Ask Question</h1>
-    <%= f.input :body, as: :wysihtml5 %>
+    <%= f.input :body, as: :wysihtml5,label:"Question " %>
   </div>
   <div class="form-actions">
     <%= f.button :submit,value="Ask Question" %>
@@ -80,6 +57,3 @@
     margin: 1px;
 }
 </style>
-<!-- 
-<%= link_to 'New Question', new_question_path %>
- -->
