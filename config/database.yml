@@ -24,6 +24,7 @@ default: &default
   username: oreo
   password: admin
 
+
 development:
   <<: *default
   database: registration

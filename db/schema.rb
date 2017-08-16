@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170802033637) do
+ActiveRecord::Schema.define(version: 20170816123312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "cemail"
+    t.integer "student_id"
+    t.integer "question_id"
+    t.index ["question_id"], name: "index_comments_on_question_id"
+    t.index ["student_id"], name: "index_comments_on_student_id"
+  end
 
   create_table "forms", force: :cascade do |t|
     t.string "current"
@@ -22,22 +33,16 @@ ActiveRecord::Schema.define(version: 20170802033637) do
     t.string "comaddr"
     t.string "desig"
     t.integer "exp"
-    t.boolean "abroad"
     t.string "univ"
     t.string "course"
-    t.string "starcompany"
-    t.string "staraddr"
-    t.string "commun"
     t.string "mobile"
     t.string "curmail"
     t.string "linked_id"
-    t.string "areaofinterset"
     t.string "contribute"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "student_id"
     t.integer "userid"
-    t.string "social"
     t.string "univaddr"
     t.string "govtsector"
     t.string "address"
@@ -66,8 +71,6 @@ ActiveRecord::Schema.define(version: 20170802033637) do
     t.string "zip"
     t.string "country"
     t.string "phone"
-    t.decimal "lat"
-    t.decimal "lng"
     t.text "full_address"
     t.string "workapt"
     t.string "workstreet"
@@ -94,7 +97,6 @@ ActiveRecord::Schema.define(version: 20170802033637) do
     t.string "otherzip"
     t.string "otherapt"
     t.string "othercity"
-    t.string "conutry"
     t.string "workcountry"
     t.string "govtcountry"
     t.string "entcountry"
@@ -107,6 +109,16 @@ ActiveRecord::Schema.define(version: 20170802033637) do
     t.string "Zip"
     t.string "Country"
     t.string "major"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "tile"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "qemail"
+    t.integer "student_id"
+    t.index ["student_id"], name: "index_questions_on_student_id"
   end
 
   create_table "students", force: :cascade do |t|
@@ -122,15 +134,10 @@ ActiveRecord::Schema.define(version: 20170802033637) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "rollno"
-    t.string "regno"
-    t.date "dob"
     t.string "provider"
     t.string "uid"
     t.string "stuname"
-    t.index ["dob"], name: "index_students_on_dob", unique: true
     t.index ["email"], name: "index_students_on_email", unique: true
-    t.index ["regno"], name: "index_students_on_regno", unique: true
     t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
     t.index ["stuname"], name: "index_students_on_stuname", unique: true
   end
@@ -140,6 +147,22 @@ ActiveRecord::Schema.define(version: 20170802033637) do
     t.string "rollno"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.string "votable_type"
+    t.bigint "votable_id"
+    t.string "voter_type"
+    t.bigint "voter_id"
+    t.boolean "vote_flag"
+    t.string "vote_scope"
+    t.integer "vote_weight"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope"
+    t.index ["votable_type", "votable_id"], name: "index_votes_on_votable_type_and_votable_id"
+    t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
+    t.index ["voter_type", "voter_id"], name: "index_votes_on_voter_type_and_voter_id"
   end
 
 end

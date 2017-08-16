@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+ 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'forms/new'
   get '/2sign' => 'users#new'
@@ -23,6 +24,15 @@ end
   end
 end
 
+   
+
+  resources :questions do
+    member do
+      put "like", to:    "questions#upvote"
+      put "dislike", to: "questions#downvote"
+    end
+   resources :comments
+ end
   
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

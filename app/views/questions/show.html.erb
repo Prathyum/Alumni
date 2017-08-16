@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+<center>
+<div class="page-header">
+  <h1><%= @question.tile %></h1><br>
+	<p><%= @question.body.html_safe %></p>
+  <h4><small>Submitted by <%= @question.student.email %></small></h4>
+</div>
+<% if @question.student== current_student -%>
+	<div class="btn-group">
+		<%= link_to 'Edit', edit_question_path(@question), class: "btn btn-default" %>
+		<%= link_to 'Delete', @question, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
+	</div>
+<% end %>
+</center>
+
+
+<!-- <p>
+  <strong>Tile:</strong>
+  <%= @question.tile %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+<<<<<<< HEAD
+  <%= @question.body %> -->
+
+
+ <%= link_to "New_comment",new_question_comment_path(@question),class: "btn btn-danger"%>
+<%= link_to 'Back', questions_path,class: "btn btn-primary "%>
+
+
+  <%= @question.body %>
+  <br>
+  <strong>Submitted by <%= current_student.email %></strong>
+</p>
+<p> Comments <%= @question.comments.count %> 
+<h2>Write Comment </h2>
+
+ 
+<h3 class="comments_title">
+  <%= @question.comments.count %> Comments
+</h3>
+<%= render :partial => @question.comments %>
+<div id="box">
+<%= simple_form_for [@question, Comment.new]  do |f| %>
+  <div class="field">
+    <%= f.input :body, as: :wysihtml5 %>
+  </div>
+  <br>
+  <%= f.submit "Add Comment", class: "btn btn-primary" %>
+<% end %>
+</div>
+  <style>
+#box{
+    background-color: lightgrey;
+    width: 700px;
+    border: 5px solid lightblue;
+    padding: 10px;
+    margin: 1px;
+}
+</style>

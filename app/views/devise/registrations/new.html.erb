@@ -11,15 +11,7 @@
     <%= f.label :email  %><br />
     <%= f.email_field :email,placeholder: "Email Id",class: "form-control",autofocus: true %>
   </div>
-<!-- <div class="field">
-    <%= f.label :rollno %><br/>
-    <%= f.text_field :regno,placeholder: "Roll_No",class: "form-control",autofocus:true %>
-  </div> -->
-  <!--div class="field">
-    <%= f.label :DOB %><br />
-    <%= f.date_field :dob,placeholder:"dd/mm/yyyy",class: "form-control" %>
-  </div-->
-  <div class="field">
+<div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
