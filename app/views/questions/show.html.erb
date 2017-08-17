@@ -25,22 +25,17 @@
   <%= @question.body %> -->
 
 
- <%= link_to "New_comment",new_question_comment_path(@question),class: "btn btn-danger"%>
 <%= link_to 'Back', questions_path,class: "btn btn-primary "%>
 
-
-  <%= @question.body %>
   <br>
   <strong>Submitted by <%= current_student.email %></strong>
 </p>
 <p> Comments <%= @question.comments.count %> 
-<h2>Write Comment </h2>
+<h2>Write Comment: </h2>
 
  
 <h3 class="comments_title">
-  <%= @question.comments.count %> Comments
 </h3>
-<%= render :partial => @question.comments %>
 <div id="box">
 <%= simple_form_for [@question, Comment.new]  do |f| %>
   <div class="field">
@@ -49,6 +44,11 @@
   <br>
   <%= f.submit "Add Comment", class: "btn btn-primary" %>
 <% end %>
+  <div id="box1">
+  <%= @question.comments.count %> comments:
+
+<%= render :partial => @question.comments %>
+</div>
 </div>
   <style>
 #box{
@@ -57,5 +57,13 @@
     border: 5px solid lightblue;
     padding: 10px;
     margin: 1px;
+}
+#box1{
+    background-color: lightblue;
+    width: 650px;
+    border: 5px solid lightblue;
+    padding: 10px;
+    margin: 1px;
+    color: black;
 }
 </style>

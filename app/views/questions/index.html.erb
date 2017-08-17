@@ -1,3 +1,5 @@
+<h2 align="center"> Welcome to the FORUM:</h2>
+<h3> 
 <p id="notice"><%= notice %></p>
 
 <div class="col-sm-1"></div>
@@ -8,7 +10,7 @@
     <h2>
         <%= link_to question.tile, question %><br>
         <small class="author">Submitted
-            by<%=question.student.email%>
+            by <%=question.student.email%>
             
             </div>
   <div class="btn-group">
@@ -36,8 +38,8 @@
 <%= simple_form_for [@question, Question.new]  do |f| %>
   <div class="form-inputs">
   <h1>Short Description</h1>
-    <%= f.input :tile ,label:" short Description "%>
-    <h1>Ask Question</h1>
+    <%= f.input :tile ,label:" Short Description "%>
+    <h1>Ask a Question</h1>
     <%= f.input :body, as: :wysihtml5,label:"Question " %>
   </div>
   <div class="form-actions">

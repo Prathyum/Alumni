@@ -97,7 +97,6 @@ ActiveRecord::Schema.define(version: 20170816123312) do
     t.string "otherzip"
     t.string "otherapt"
     t.string "othercity"
-    t.string "conutry"
     t.string "workcountry"
     t.string "govtcountry"
     t.string "entcountry"

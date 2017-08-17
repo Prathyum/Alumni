@@ -24,7 +24,7 @@ class QuestionsController < ApplicationController
   # question /questions
   # question /questions.json
   def create
-    @question = current_student.question.build(question_params)
+    @question = current_student.questions.build(question_params)
     respond_to do |format|
       if @question.save
         format.html { redirect_to questions_path, notice: '' }
