@@ -7,8 +7,8 @@
 <div class="container">
 <div class="page-header">
     <h2>
-        <%= link_to question.tile, question %><br>
-        <small class="author">Submitted
+        <small><%= link_to question.body.html_safe, question %><br><small>
+        <class="author">Submitted
             by <%=question.student.email%>
             
             </div>
@@ -60,3 +60,4 @@
     margin: 1px;
 }
 </style>
+ 

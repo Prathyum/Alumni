@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'forms/new'
   get '/2sign' => 'users#new'
   get 'staticpage/index'
+  get 'login/auth'
 
  resources :forms
  resources :users
