@@ -30,7 +30,7 @@ gem 'rails_admin', '~> 1.2'
 gem 'bootstrap-wysihtml5-rails'
 gem 'simple_form'
 gem 'country_select'
-
+gem 'kaminari'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
