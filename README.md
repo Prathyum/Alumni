@@ -1,4 +1,1 @@
-# README
-
-This is the actual clone of Alumni Portal of St.joseph's Institute of Technology.
-I added the forum ability to that clone
+A fully functional portal which enables a college alumnus to log in, input their current details and communicate with their fellow batch mates or juniours through the forum.
