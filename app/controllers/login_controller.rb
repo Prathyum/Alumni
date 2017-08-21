@@ -1,6 +1,6 @@
 class LoginController < ApplicationController
 	def auth
-		@u = student.all
+		@u = Student.all
 		res=request.original_url
 		if res.include? "student"
 
@@ -11,28 +11,28 @@ class LoginController < ApplicationController
 			end
 			response = HTTParty.post("https://portal.stjosephstechnology.ac.in/Authenticate?user=#{@us}&pass=#{@pw}")
 			if response.include? "student"
-				@student = student.find_by_studentname(params[:student])
+				@student = Student.find_by_stuname(params[:student])
 				if @student.nil?
-					@student=student.new(:stuname => @us, :password => @pw, :password_confirmation=> @pw)
+					@student=Student.new(:stuname => @us, :password => @pw, :password_confirmation=> @pw)
 					# @student.id=student.id
 					@student.save
 
 					# after_sign_up_path_for(@student)
 					sign_in(@student)
 					sign_in @student, :bypass => true 
-					redirect_to index_path
+					redirect_to staticpage_index_path
 					# after_sign_in_path_for(@student)
 				else
 					sign_in(@student)
 					sign_in @student, :bypass => true 
-					redirect_to index_path
+					redirect_to staticpage_index_path
 					# after_sign_in_path_for(@student)
 				end
 			else 
 				render html: "<strong>Authentication Failed</strong>".html_safe
 			end
 		else
-			redirect_to index_path
+			redirect_to staticpage_index_path
 		end
 
 
