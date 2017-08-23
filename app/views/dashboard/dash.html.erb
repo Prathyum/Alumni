@@ -2,6 +2,6 @@
 <% @question.each do |p| %>
 <% @student.each do |s|%>
 <td><%=s.email%></td>
-<td><%=p.body%></p>
+<td><%=p.body.html_safe%></p>
 <%end%>
 <%end%>

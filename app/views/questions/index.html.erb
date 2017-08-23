@@ -1,17 +1,19 @@
-<h2 align="center"> Welcome to the FORUM:</h2>
-<h3> 
-<div class="col-sm-1"></div>
-<h2 style="color: red"  > Trending Questions: </h2>
+<div class="container">
+<center>
+<%= image_tag("logo2.png", height: 175, width:700 ,:alt => "rss feed") %>
+</center>
 <h2><%= paginate @questions %></h2>
 <% @questions.each do |question| %>
-<div class="container">
-<div class="page-header">
-    <h2>
-        <small><%= link_to question.body.html_safe, question %><br><small>
-        <class="author">Submitted
-            by <%=question.student.email%>
-            
+<div id="box">
+<div class ="wrap">
+    <table>
+    <tr>
+        <td><small><%= link_to question.body.html_safe, question %><small></td></tr>
+        <td><small>Submitted
+            by <%=question.student.email%></td>
+            </table>
             </div>
+            
   <div class="btn-group">
         <!-- <a class="btn btn-default btn-sm" href="<% questions_path %>">Visit question</a> -->
         <%= link_to like_question_path(question), method: :put, class: "btn btn-default btn-sm" do %>
@@ -25,6 +27,7 @@
             <%= question.get_downvotes.size %>
             <% end %>
         </div>
+    </div>
     
     <% end %>
   </h2>
@@ -55,7 +58,7 @@
 #box{
     background-color: lightgrey;
     width: 700px;
-    border: 5px solid lightblue;
+    border: 1px solid lightblue;
     padding: 10px;
     margin: 1px;
 }

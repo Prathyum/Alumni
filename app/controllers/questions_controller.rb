@@ -4,8 +4,9 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.all.order("created_at DESC")
+    @questions = Question.order(:voter_id)
     @questions = Question.order(:id).page params[:page]
+
   end
 
   # GET /questions/1
