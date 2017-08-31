@@ -1,7 +1,18 @@
 <%= form_for (@user) do|f| %>
 
+  <link rel="stylesheet" type="text/css" href="app/assets/stylesheets/users.css">
+<style>
+	
+	body {
+  background: #A0A9CC;
+  color: #fff;
+  font-size: 1.5em;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", sans-serif;
+  font-weight: 100;
+  text-align: center;
+}
 
-
+</style>
 <div class="container">
 
 <div class="col-md-4"></div>
@@ -9,9 +20,9 @@
 
 <h1 align="center"> Sign Up </h1>
 <br>
-   <div class="field" align="left">
+   <div class="field" align="left" >
    <center> <%= f.label :Rollno %></center>
-    <%= f.text_field :rollno,placeholder: "Rollno", class: "form-control" %>
+    <%= f.text_field :rollno,placeholder: "Rollno", class: "form-control"  %>
   </div>
    
 <div class="field" align="left">

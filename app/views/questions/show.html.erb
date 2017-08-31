@@ -3,7 +3,7 @@
 <div class="page-header">
   <h2><%= @question.body.html_safe %></h2>
   <h4><%= @question.tile %></h4><br>
-	<h4><small>Submitted by <%= @question.student.email %></small></h4>
+	<h4><small>Submitted by <%= @question.student.stuname %> <br/> <%= time_ago_in_words(@question.created_at) %> ago</small></h4>
 </div>
 <% if @question.student== current_student -%>
 	<div class="btn-group">

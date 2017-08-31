@@ -15,6 +15,7 @@ class FormsController < ApplicationController
 
   end
 
+
   # GET /forms/new
   def new
     @form=Form.new
@@ -22,17 +23,16 @@ class FormsController < ApplicationController
 
   # GET /forms/1/edit
   def edit
-     @form = Form.find(params[:id])
-    # @student=Student.find(params[:id])
+      @form = Form.find(params[:id])
+    # # @student=Student.find(params[:id])
   end
 
   # POST /forms
   # POST /forms.json
   def create
   
-     @form = Form.new(form_params)
+      @form = Form.new(form_params)
       @form.student_id= current_student.id
-
     respond_to do |format|
       if @form.save(form_params)
         
@@ -72,7 +72,7 @@ class FormsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_form
+    def set_form;
       @form = Form.find(params[:id])
     end
 

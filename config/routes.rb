@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   get 'login/auth'
   get 'dashboard/dash'
 
+post 'dashboard/accept'
+post 'dashboard/reject'
+
  resources :forms
  resources :users
 devise_for :students

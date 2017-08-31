@@ -1,7 +1,30 @@
-
+<table>
+<tr>
+<th>Name</th>
+<th>Question</th>
+<th>Status</th>
+</tr>
 <% @question.each do |p| %>
 <% @student.each do |s|%>
-<td><%=s.email%></td>
-<td><%=p.body.html_safe%></p>
+<% if s.id == p.student_id %>
+<tr>
+<td><%=s.stuname%></td>
+<td><%=p.body.html_safe%></p></td>
+<% if p.acc == true %>
+				<td><strong>ACCEPTED</strong></td>
+				<% elsif p.rej == true%>
+				<td><strong>REJECTED</strong></td>
+				<% else %>
+				<td colspan="2">
+				
+					<%= button_to "Accept", dashboard_accept_path(id: p.id,uid: s.id,method: :post),class: "btn btn-primary" %>
+					<%= button_to "Reject", dashboard_reject_path(id: p.id,uid: s.id,method: :post),class: "btn btn-primary" %>
+				</td>
+				</td>
+				</tr>
+				</table>
+				<% end %>
+				<% end %>
+				
 <%end%>
 <%end%>

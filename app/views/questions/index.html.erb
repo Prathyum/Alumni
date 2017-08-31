@@ -2,40 +2,11 @@
 <center>
 <%= image_tag("logo2.png", height: 175, width:700 ,:alt => "rss feed") %>
 </center>
+
 <h2><%= paginate @questions %></h2>
-<% @questions.each do |question| %>
-<div id="box">
-<div class ="wrap">
-    <table>
-    <tr>
-        <td><small><%= link_to question.body.html_safe, question %><small></td></tr>
-        <td><small>Submitted
-            by <%=question.student.email%></td>
-            </table>
-            </div>
-            
-  <div class="btn-group">
-        <!-- <a class="btn btn-default btn-sm" href="<% questions_path %>">Visit question</a> -->
-        <%= link_to like_question_path(question), method: :put, class: "btn btn-default btn-sm" do %>
-        <span class="glyphicon glyphicon-chevron-up"></span>
-        Upvote
-        <%= question.get_upvotes.size %>
-        <% end %>
-        <%= link_to dislike_question_path(question), method: :put, class: "btn btn-default btn-sm" do %>
-        <span class="glyphicon glyphicon-chevron-down">
-            Downvote
-            <%= question.get_downvotes.size %>
-            <% end %>
-        </div>
-    </div>
-    
-    <% end %>
-  </h2>
-            </div>
-            <br>
-<div class="container">
- <div class="col-sm-1"></div> 
-<div class="col-md-5">
+<!-- <div class="container">
+ <div class="col-sm-2"></div> 
+<div class="col-md-6">
 <h3 class="comments_title">Ask Question</h3>
 <div id="box">
 <%= simple_form_for [@question, Question.new]  do |f| %>
@@ -52,11 +23,48 @@
 <% end %>
 </div>
 </div>
-<br>
-<h1><%= paginate @questions%></h1>
+<br> -->
+<h2 align="page-header "> Welcome to the Forum: </h2>
+<h3> Frequently asked questions: </h3>
+<% @questions.each do |question| %>
+<div class="container">
+<div class ="page-header">
+    <%if question.acc==true%>
+    <table>
+    <tr>
+        <td><small><%= link_to question.body.html_safe, question %><small></td></tr>
+        <td><small>Submitted 
+            by <%=question.student.stuname%> <br/><%= time_ago_in_words(question.created_at) %> ago </td>
+           
+            </table>
+            
+  <div class="btn-group">
+        <!-- <a class="btn btn-default btn-sm" href="<% questions_path %>">Visit question</a> -->
+        <%= link_to like_question_path(question), method: :put, class: "btn btn-default btn-sm" do %>
+        <span class="glyphicon glyphicon-chevron-up"></span>
+        Upvote
+        <%= question.get_upvotes.size %>
+        <% end %>
+        <%= link_to dislike_question_path(question), method: :put, class: "btn btn-default btn-sm" do %>
+        <span class="glyphicon glyphicon-chevron-down">
+            Downvote
+            <%= question.get_downvotes.size %>
+            <% end %>
+        </div>
+        </div>
+    </div>
+        <% end %>
+  </h2>
+            </div>
+            <br>
+            </div>
+            </div>
+
+            <%end%>
+<<h1><%= paginate @questions%></h1>
 <style>
 #box{
-    background-color: lightgrey;
+    background-color: white;
     width: 700px;
     border: 1px solid lightblue;
     padding: 10px;

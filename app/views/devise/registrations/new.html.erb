@@ -6,7 +6,10 @@
 <div class="col-md-4" align="center"></div>
    <div class="col-md-4">
 
-
+ <div class="field">
+    <%= f.label :Name  %><br />
+    <%= f.text_field :stuname,placeholder: "Enter your name",class: "form-control",autofocus: true %>
+  </div>
   <div class="field">
     <%= f.label :email  %><br />
     <%= f.email_field :email,placeholder: "Email Id",class: "form-control",autofocus: true %>
