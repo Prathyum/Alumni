@@ -11,7 +11,11 @@ protected
 
      def after_sign_in_path_for(student)
 
-     	staticpage_index_path
+     	 if current_student.adminuser
+            dashboard_dash_path
+         else
+            staticpage_index_path
+     end
      end
 
      def after_sign_up_path_for(student)

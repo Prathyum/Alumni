@@ -10,5 +10,20 @@
 			 <td><%= link_to 'Destroy', @comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
          <% end %>
 		</div>
+		<div class="btn-group">
+        <%= link_to like_comment_path(comment), method: :put, class: "btn btn-default btn-sm" do %>
+        <span class="glyphicon glyphicon-chevron-up"></span>
+        Upvote
+        <%= comment.get_upvotes.size %>
+        <% end %>
+        <%= link_to dislike_comment_path(comment), method: :put, class: "btn btn-default btn-sm" do %>
+        <span class="glyphicon glyphicon-chevron-down">
+            Downvote
+            <%= comment.get_downvotes.size %>
+            <% end %>
+        </div>
+        </div>
+  
 	</div>
+
 <% end %>
