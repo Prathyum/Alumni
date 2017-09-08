@@ -140,8 +140,7 @@ ActiveRecord::Schema.define(version: 20170906041823) do
     t.string "uid"
     t.string "stuname"
     t.integer "form_id"
-    t.boolean "admin", default: false
-    t.boolean "adminuser", default: false
+    t.boolean "adminuser"
     t.index ["email"], name: "index_students_on_email", unique: true
     t.index ["form_id"], name: "index_students_on_form_id"
     t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true

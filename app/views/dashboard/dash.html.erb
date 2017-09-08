@@ -11,6 +11,7 @@
 <tr style="color: red">
 <th><strong>NAME</strong></th>
 <th><strong>QUESTION</strong></th>
+<th><strong>Description</strong></th>
 <th><strong>STATUS</strong></th>
 </tr>
 <% @question.each do |p| %>
@@ -18,7 +19,8 @@
 <% if s.id == p.student_id %>
 <tr>
 <td><%=s.stuname%></td>
-<td><%=p.body.html_safe%></p></td>
+<td><%=p.body.html_safe%></td>
+<td><%=p.tile%></td>
 <% if p.acc == true %>
 				<td><strong>ACCEPTED</strong></td>
 				<% elsif p.rej == true%>
@@ -34,9 +36,10 @@
 				</div>
 				</tr>
 				
-				</table>
 				<% end %>
 				<% end %>
 				
 <%end%>
 <%end%>
+				</table>
+				
