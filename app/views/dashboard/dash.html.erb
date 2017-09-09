@@ -7,8 +7,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
   <div class="container">
-<table class="table table-bordered">
-<tr style="color: red">
+<table class="table table-responsive table-bordered table-hover">
+<tr class="bg-primary">
 <th><strong>NAME</strong></th>
 <th><strong>QUESTION</strong></th>
 <th><strong>Description</strong></th>
@@ -18,13 +18,13 @@
 <% @student.each do |s|%>
 <% if s.id == p.student_id %>
 <tr>
-<td><%=s.stuname%></td>
+<td class="table-active"><%=s.stuname%></td>
 <td><%=p.body.html_safe%></td>
 <td><%=p.tile%></td>
 <% if p.acc == true %>
-				<td><strong>ACCEPTED</strong></td>
+				<td class="bg-success"><font color="green"><strong>ACCEPTED</strong></font></td>
 				<% elsif p.rej == true%>
-				<td><strong>REJECTED</strong></td>
+				<td class="bg-warning"><strong><font color="red">REJECTED</font></strong></td>
 				<% else %>
 				<div class="col-md-3"></div>
   				<div class="col-md-6">
