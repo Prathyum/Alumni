@@ -38,6 +38,7 @@
       
       <ul class="nav navbar-nav navbar-right">
       <li>
+      <br>
       <%= form_tag(questions_path, :method => "get", id: "search-form") do %>
     <%= text_field_tag :search, params[:search], placeholder: "Search question" %>
     <%= submit_tag "Search", :name => nil %>
