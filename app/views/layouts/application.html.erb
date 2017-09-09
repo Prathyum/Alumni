@@ -32,9 +32,17 @@
         <li><%=link_to 'HOME',staticpage_index_path %> <span class="sr-only"></span></a></li>
         <li><a href="http://portal.stjosephstechnology.ac.in/">College Portal</a></li>
         <li><%=link_to 'Ask Questions', new_question_path %></li>
+  
+
               </ul>
       
       <ul class="nav navbar-nav navbar-right">
+      <li>
+      <%= form_tag(questions_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search question" %>
+    <%= submit_tag "Search", :name => nil %>
+    <%end%>
+    </li>
         <li class="dropdown">
          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_student.stuname%> <span class="caret"></span></a>
           <ul class="dropdown-menu">
