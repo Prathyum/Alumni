@@ -1,45 +1,27 @@
+<p id="notice"><%= notice %></p>
 <div class="container">
 <center>
 <%= image_tag("logo2.png", height: 175, width:700 ,:alt => "rss feed") %>
 </center>
 
 <h2><%= paginate @questions %></h2>
-<!-- <div class="container">
- <div class="col-sm-2"></div> 
-<div class="col-md-6">
-<h3 class="comments_title">Ask Question</h3>
-<div id="box">
-<%= simple_form_for [@question, Question.new]  do |f| %>
-  <div class="form-inputs">
-  <h1>Short Description</h1>
-    <%= f.input :tile ,label:" Short Description "%>
-    <h1>Ask a Question</h1>
-    <%= f.input :body, as: :wysihtml5,label:"Question " %>
-  </div>
-  <div class="form-actions">
-    <%= f.button :submit,value="Ask Question" %>
-  </div>
-  </div>
-<% end %>
-</div>
-</div>
-<br> -->
+    <table class="table table-hover  table-responsive">
+     <thead>
+    <th>Topics</th>
+    <th>Votes</th>
+    <th>Users</th>
+    <th>Replies</th>
+    <th>Views</th>
+    <th>Activity</th>
+    </thead>
+    
 <h2 align="page-header "> Welcome to the Forum: </h2>
-<h3> Frequently asked questions: </h3>
 <% @questions.each do |question| %>
 <div class="container">
-<div class ="page-header">
     <%if question.acc==true%>
-    <table>
     <tr>
-        <td><small><%= link_to question.tile.html_safe, question %><small></td></tr>
-        <td><small>Submitted 
-            by <%=question.student.stuname%> <br/><%= time_ago_in_words(question.created_at) %> ago </td>
-           
-            </table>
-            
-  <div class="btn-group">
-        <!-- <a class="btn btn-default btn-sm" href="<% questions_path %>">Visit question</a> -->
+    <td><%= link_to question.tile.html_safe, question %></td>
+        <td><div class="btn-group">
         <%= link_to like_question_path(question), method: :put, class: "btn btn-default btn-sm" do %>
         <span class="glyphicon glyphicon-chevron-up"></span>
         Upvote
@@ -50,25 +32,28 @@
             Downvote
             <%= question.get_downvotes.size %>
             <% end %>
+            </br>
+            </br>
         </div>
         </div>
     </div>
+
         <% end %>
+        </td>
+  
+    </td>
+        <td><%=question.student.stuname%>
+        </td>
+        <td><%= question.comments.count %></td>
+         <td><%= question.impressionist_count %></td>
+        <td><%= time_ago_in_words(question.created_at) %> ago </td> 
+        </tr>    
+            
   </h2>
             </div>
             <br>
             </div>
-            </div>
 
             <%end%>
-<<h1><%= paginate @questions%></h1>
-<style>
-#box{
-    background-color: white;
-    width: 700px;
-    border: 1px solid lightblue;
-    padding: 10px;
-    margin: 1px;
-}
-</style>
- 
+            </table>
+<h1><%= paginate @questions%></h1>

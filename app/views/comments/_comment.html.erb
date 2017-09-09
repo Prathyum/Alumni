@@ -5,9 +5,10 @@
 			<p><small>Submitted <strong>by <%= comment.student.stuname %></strong></small></p>
 		</div>
 
-		<div class="btn-group pull-right">
+		<div class="btn-group">
 			<% if comment.student == current_student -%>
-			 <td><%= link_to 'Destroy', @comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+			 <td><%= link_to 'Destroy', @comment, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-danger" %></td>
+             <td><%= link_to 'Edit',edit_comment_path, class: "btn btn-primary"%></td>
          <% end %>
 		</div>
 		<div class="btn-group">

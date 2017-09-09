@@ -12,6 +12,7 @@ class QuestionsController < ApplicationController
   # GET /questions/1
   # GET /questions/1.json
   def show
+     impressionist(@question)
   end
 
   # GET /questions/new
@@ -29,7 +30,7 @@ class QuestionsController < ApplicationController
     @question = current_student.questions.build(question_params)
     respond_to do |format|
       if @question.save
-        format.html { redirect_to questions_path, notice: '' }
+        format.html { redirect_to questions_path, notice: 'your Question is Sent waiting for college response :)' }
         # format.json { render :show, status: :created, location: @question }
       else
         format.html { render :new }
